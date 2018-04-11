@@ -1,7 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
-name = maxrodrigo
-email = contact@maxrodrigo.com
+    username = maxrodrigo
+	name = "Max Rodrigo"
+	email = contact@maxrodrigo.com
 [core]
     editor = vim
     excludesfile = /Users/wxr/.gitignore_global

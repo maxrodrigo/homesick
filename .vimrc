@@ -24,8 +24,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-obsession'
 
 " Interface
-Plugin 'ryanoasis/vim-devicons'
-
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -65,9 +63,6 @@ let NERDTreeChDirMode = 2
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
-
-" NERDTree Git
-let g:NERDTreeUseSimpleIndicator = 1
 
 " NERDTree Highlight
 let g:NERDTreeLimitedSyntax = 1
@@ -114,16 +109,8 @@ let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_filetype_blacklist = {}
 
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-
-" Devicons
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-" after a re-source, fix syntax matching issues (concealing brackets):
-if exists('g:loaded_webdevicons')
-    call webdevicons#refresh()
-endif
+let g:ycm_key_list_select_completion = ['<C-j>']
+let g:ycm_key_list_previous_completion = ['<C-k>']
 
 " INDENTATION *****************************
 set linebreak

@@ -1,0 +1,10 @@
+alias cat="pygmentize -g"
+alias v='nvim'
+
+# Based on https://news.ycombinator.com/item?id=11071754
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+# Shortcuts
+
+alias yd="${HOME}/Code/work/yourdictionary"
+alias personal="${HOME}/Code/personal/maxrodrigo.github.io"

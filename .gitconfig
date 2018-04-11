@@ -1,0 +1,56 @@
+# This is Git's per-user configuration file.
+[user]
+name = maxrodrigo
+email = contact@maxrodrigo.com
+[core]
+    editor = vim
+    excludesfile = /Users/wxr/.gitignore_global
+[push]
+    default = simple
+[alias]
+    la = "!git config -l | grep alias | cut -c 7-"
+
+    cp = cherry-pick
+    cl = clone
+
+    ci = commit -a -v
+
+    st = status
+
+    co = checkout
+    cb = checkout -b
+    cd = checkout develop
+    cs = checkout staging
+    cm = checkout master
+
+    diff = diff --word-diff
+    dc = diff --cached
+
+    bv = branch -vv
+    ba = branch -ra
+    bd = branch -d
+
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+
+    tg = tag -a
+
+    pu = push --tags
+    un = reset --hard HEAD
+    uh = reset --hard HEAD^
+    d = difftool
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[branch]
+    autosetuprebase = always
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false

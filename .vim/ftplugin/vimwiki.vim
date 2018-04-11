@@ -1,0 +1,1 @@
+:au FocusLost * silent! wa

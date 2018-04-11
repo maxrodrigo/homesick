@@ -1,0 +1,15 @@
+# Default editor
+export EDITOR=nvim
+
+# Change default zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+
+# Colors
+export CLICOLOR=1
+export KEYTIMEOUT=1
+export QUOTING_STYLE=literal
+export TERM=xterm-256color
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';

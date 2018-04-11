@@ -1,8 +1,9 @@
 # Imports
 
-IMPORTS=(.ailases .exports)
+## declare an array variable
+declare -a dotfiles=(".aliases" ".exports")
 
-for df in $IMPORTS; do
+for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df
 done
 

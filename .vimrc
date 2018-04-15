@@ -11,7 +11,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'tmhedberg/SimpylFold'
+Plugin 'gabesoft/vim-ags'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
@@ -35,9 +35,13 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 
 " Python
+Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'tmhedberg/SimpylFold'
+
+" Bash
+Plugin 'bash-support.vim'
 
 " HTML
 Plugin 'mattn/emmet-vim'
@@ -89,10 +93,19 @@ let g:airline_powerline_fonts = 1
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.svn$\|\.vagrant$\|bower_components$\|dist$\|node_modules$\|vendor$\|log$\|cache$\|test$',
-    \ 'file': '\tags$\|\.pyc$' }
+    \ 'dir': '\v[\/]\.(git|hg|svn|vagrant|bower_components|dist|node_modules|vendor|log|cache)$',
+    \ 'file': '\tags$\|\.pyc$'
+    \ }
+
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
 
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
@@ -169,16 +182,6 @@ set smartcase
 set nolazyredraw
 set magic
 
-if executable("ag")
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-endif
-
 " BUFFERS ********************************
 set hidden
 set splitright
@@ -235,10 +238,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
-
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -272,6 +271,9 @@ noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
 autocmd FocusGained,BufEnter * :silent! !
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
+
+" Set filetype for bats bash testing tool
+au BufRead,BufNewFile *.bats set filetype=sh
 
 " FUNCTIONS ********************************
 

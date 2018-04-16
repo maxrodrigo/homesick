@@ -90,7 +90,7 @@ let g:airline_powerline_fonts = 1
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/]\.(git|hg|svn|vagrant|bower_components|dist|node_modules|vendor|log|cache)$',
     \ 'file': '\tags$\|\.pyc$'

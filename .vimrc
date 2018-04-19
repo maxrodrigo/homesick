@@ -236,7 +236,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :Ags! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/

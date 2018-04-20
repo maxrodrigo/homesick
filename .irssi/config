@@ -79,7 +79,6 @@ statusbar = {
 
       items = {
         barstart = { priority = "100"; };
-        time = { };
         user = { };
         window = { };
         window_empty = { };
@@ -154,9 +153,12 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
-    show_names_on_join = "yes";
+    show_names_on_join = "OFF";
     theme = "neongold";
-    autolog = "no";
+    tls_verbose_connect = "OFF";
+    beep_msg_level = "MSGS HILIGHT DCCMSGS INVITES";
+    hilight_nick_matches_everywhere = "yes";
+    hilight_nick_matches = "yes";
   };
   "perl/core/scripts" = { awl_shared_sbar = "OFF"; awl_viewer = "no"; };
 };

@@ -40,6 +40,9 @@ Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tmhedberg/SimpylFold'
 
+" Bash
+Plugin 'kawaz/batscheck.vim'
+
 " HTML
 Plugin 'mattn/emmet-vim'
 

@@ -15,12 +15,12 @@
     cl = clone
 
     ci = commit -a -v
+    cm = commit -m
 
     st = status
 
     co = checkout
     cb = checkout -b
-    cm = checkout -m
 
     diff = diff --word-diff
     dc = diff --cached

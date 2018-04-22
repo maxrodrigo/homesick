@@ -1225,7 +1225,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1588 448 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>427 554 918 381 0 0 1920 1080 </string>
+	<string>285 300 1018 447 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -2937,7 +2937,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-15T23:13:37Z</date>
+	<date>2018-04-20T20:23:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2951,7 +2951,7 @@
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
-	<false/>
+	<true/>
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
@@ -2964,6 +2964,8 @@
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
+	<key>TabFlashAnimationDuration</key>
+	<real>0.0</real>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabViewType</key>

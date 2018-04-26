@@ -1225,9 +1225,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1588 448 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>285 300 1018 447 0 0 1440 900 </string>
+	<string>285 222 1016 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 900 </string>
+	<string>0 0 1920 1080 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2534 297 570 452 1440 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1531,7 +1531,7 @@
 			<key>HotKey Modifier Flags</key>
 			<integer>524288</integer>
 			<key>HotKey Window Animates</key>
-			<true/>
+			<false/>
 			<key>HotKey Window AutoHides</key>
 			<false/>
 			<key>HotKey Window Dock Click Action</key>
@@ -2018,7 +2018,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.034799333756345176</real>
+			<real>0.12488499365482235</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -2937,7 +2937,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-20T20:23:58Z</date>
+	<date>2018-04-22T20:24:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

@@ -50,6 +50,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'itspriddle/vim-marked'
 
 " Fancy stuff
+Plugin 'mattn/calendar-vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mhinz/vim-startify'
 

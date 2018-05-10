@@ -17,7 +17,7 @@
     ci = commit -a -v
     cm = commit -m
 
-    st = status
+    s = status
 
     co = checkout
     cb = checkout -b
@@ -35,7 +35,7 @@
 
     sl = stash list
     sa = stash apply
-    ss = stash save
+    sp = stash push -m
 
     tg = tag -a
 

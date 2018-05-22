@@ -46,8 +46,8 @@ Plugin 'kawaz/batscheck.vim'
 " HTML
 Plugin 'mattn/emmet-vim'
 
-" Markdown
-Plugin 'itspriddle/vim-marked'
+" Writing
+Plugin 'reedes/vim-pencil'
 
 " Fancy stuff
 Plugin 'mattn/calendar-vim'
@@ -118,8 +118,8 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Vim-Snippets
- let g:snips_author = "maxrodrigo"
- let g:snips_email = "contact@maxrodrigo.com"
+let g:snips_author = "maxrodrigo"
+let g:snips_email = "contact@maxrodrigo.com"
 
 " YouCompleteMe
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
@@ -129,6 +129,14 @@ let g:ycm_filetype_blacklist = {}
 
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
+
+" Pencil
+augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd call pencil#init()
+    autocmd FileType wiki         call pencil#init()
+    autocmd FileType text         call pencil#init()
+augroup END
 
 " INDENTATION *****************************
 set linebreak
@@ -220,6 +228,12 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Navigate through panels
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
@@ -236,12 +250,6 @@ nnoremap <S-Tab> :bprevious<CR>
 
 " Close buffer and move to the previous one.
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
-
-" Navigate through panels
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " bind K to grep word under cursor
 nnoremap K :Ags! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -266,9 +274,7 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " MAPPGINS FUNCTIONS ***************************
-
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
-
 
 " AUTOCMD ***********************************
 
@@ -278,7 +284,7 @@ autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
 
 " Set filetype for bats bash testing tool
-au BufRead,BufNewFile *.bats set filetype=sh
+autocmd BufRead,BufNewFile *.bats set filetype=sh
 
 " FUNCTIONS ********************************
 

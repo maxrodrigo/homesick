@@ -17,7 +17,7 @@
     ci = commit -a -v
     cm = commit -m
 
-    s = status
+    st = status -s
 
     co = checkout
     cb = checkout -b

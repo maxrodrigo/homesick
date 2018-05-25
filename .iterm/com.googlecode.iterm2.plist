@@ -24,6 +24,8 @@
 	<string>manual</string>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
+	<key>BracketedPasteMode</key>
+	<true/>
 	<key>CheckTestRelease</key>
 	<false/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -1107,6 +1109,8 @@
 	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
+	<key>EscapeShellCharsWithBackslash</key>
+	<false/>
 	<key>FlashTabBarInFullscreen</key>
 	<true/>
 	<key>FocusFollowsMouse</key>
@@ -1225,9 +1229,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1588 448 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>285 222 1016 512 0 0 1440 900 </string>
+	<string>-1423 578 918 512 -1920 314 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 900 </string>
+	<string>1920 1 759 1079 1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2534 297 570 452 1440 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2879,6 +2883,16 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteSpecialChunkDelay</key>
+	<real>0.01</real>
+	<key>PasteSpecialChunkSize</key>
+	<integer>1024</integer>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
@@ -2937,7 +2951,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-09T14:33:04Z</date>
+	<date>2018-05-21T14:50:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

@@ -17,6 +17,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'godlygeek/tabular'
+Plugin 'airblade/vim-gitgutter'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
@@ -26,7 +27,7 @@ Plugin 'tpope/vim-obsession'
 " Interface
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -45,9 +46,6 @@ Plugin 'kawaz/batscheck.vim'
 
 " HTML
 Plugin 'mattn/emmet-vim'
-
-" Writing
-Plugin 'reedes/vim-pencil'
 
 " Fancy stuff
 Plugin 'mattn/calendar-vim'
@@ -70,10 +68,10 @@ let NERDTreeMinimalUI = 1
 let NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
 
 " NERDTree Highlight
-let g:NERDTreeLimitedSyntax = 1
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
+" let g:NERDTreeLimitedSyntax = 1
+" let g:NERDTreeFileExtensionHighlightFullName = 1
+" let g:NERDTreeExactMatchHighlightFullName = 1
+" let g:NERDTreePatternMatchHighlightFullName = 1
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -129,14 +127,6 @@ let g:ycm_filetype_blacklist = {}
 
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
-
-" Pencil
-augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd call pencil#init()
-    autocmd FileType wiki         call pencil#init()
-    autocmd FileType text         call pencil#init()
-augroup END
 
 " INDENTATION *****************************
 set linebreak
@@ -252,7 +242,7 @@ nnoremap <S-Tab> :bprevious<CR>
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " bind K to grep word under cursor
-nnoremap K :Ags! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
 
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/

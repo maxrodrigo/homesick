@@ -27,7 +27,6 @@ Plugin 'tpope/vim-obsession'
 " Interface
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -40,6 +39,7 @@ Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'ambv/black'
 
 " Bash
 Plugin 'kawaz/batscheck.vim'
@@ -66,12 +66,6 @@ let NERDTreeChDirMode = 2
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
-
-" NERDTree Highlight
-" let g:NERDTreeLimitedSyntax = 1
-" let g:NERDTreeFileExtensionHighlightFullName = 1
-" let g:NERDTreeExactMatchHighlightFullName = 1
-" let g:NERDTreePatternMatchHighlightFullName = 1
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -127,6 +121,9 @@ let g:ycm_filetype_blacklist = {}
 
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
+
+" SimpyFold
+let g:SimpylFold_docstring_preview = 1
 
 " INDENTATION *****************************
 set linebreak

@@ -1,59 +1,60 @@
-" Vundle **********************************
-set nocompatible
-filetype off
+" Automatically install vim-plug if missing
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'gabesoft/vim-ags'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'jiangmiao/auto-pairs'
+Plug 'sheerun/vim-polyglot'
+Plug 'gabesoft/vim-ags'
 
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'godlygeek/tabular'
-Plugin 'airblade/vim-gitgutter'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-obsession'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
+
+Plug 'editorconfig/editorconfig-vim'
 
 " Interface
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Colors
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " Python
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'ambv/black'
+Plug 'nvie/vim-flake8'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'plytophogy/vim-virtualenv'
+Plug 'ambv/black'
 
 " Bash
-Plugin 'kawaz/batscheck.vim'
+Plug 'kawaz/batscheck.vim'
 
 " HTML
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 " Fancy stuff
-Plugin 'mattn/calendar-vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'mhinz/vim-startify'
+Plug 'mattn/calendar-vim'
+Plug 'vimwiki/vimwiki'
+Plug 'mhinz/vim-startify'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " PLUGINS *********************************
 
@@ -115,8 +116,10 @@ let g:snips_email = "contact@maxrodrigo.com"
 
 " YouCompleteMe
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
+let g:ycm_autoclose_preview_window_after_completion=1
+
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
 let g:ycm_filetype_blacklist = {}
 
 let g:ycm_key_list_select_completion = ['<C-j>']
@@ -231,10 +234,6 @@ nnoremap <leader>y :let @+=expand("%") . ':' . line(".")<CR>
 nnoremap gb :ls<CR>:buffer<Space>
 nnoremap gB :ls<CR>:vert belowright sb<Space>
 
-" Buffer navigation
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-
 " Close buffer and move to the previous one.
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
@@ -250,12 +249,6 @@ nnoremap <Space>*       :%s///g
 " YouCompleteMe
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
-
-" Tabularize
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>

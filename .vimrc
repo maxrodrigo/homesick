@@ -7,8 +7,6 @@ endif
 
 call plug#begin()
 
-Plug 'VundleVim/Vundle.vim'
-
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
@@ -37,14 +35,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 
 " Python
-Plug 'nvie/vim-flake8'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
-Plug 'plytophogy/vim-virtualenv'
-Plug 'ambv/black'
-
-" Bash
-Plug 'kawaz/batscheck.vim'
 
 " HTML
 Plug 'mattn/emmet-vim'
@@ -60,13 +52,14 @@ call plug#end()
 
 " NERDTree
 autocmd FileType nerdtree setlocal nolist
-let NERDTreeIgnore = ['\.pyc$', '.svn$', '.DS_Store', '\.egg-info', '.sass-cache']
-let NERDTreeHightlightCursorline = 1
-let NERDTreeShowHidden = 1
-let NERDTreeChDirMode = 2
 let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeMinimalUI = 1
 let NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
+let NERDTreeChDirMode = 2
+let NERDTreeHightlightCursorline = 1
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '.DS_Store', '\.egg-info', '.sass-cache']
+let NERDTreeMinimalUI = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden = 1
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -86,6 +79,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 
 " CtrlP
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
@@ -105,7 +99,7 @@ endif
 let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 let g:vimwiki_autowriteall = 1
 
-" UltiSnips
+" UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -120,13 +114,9 @@ let g:ycm_autoclose_preview_window_after_completion=1
 
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
-let g:ycm_filetype_blacklist = {}
 
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
-
-" SimpyFold
-let g:SimpylFold_docstring_preview = 1
 
 " INDENTATION *****************************
 set linebreak
@@ -141,8 +131,8 @@ set autoindent
 
 " FOLDING **********************************
 set foldmethod=indent
-set foldlevel=99
-set foldnestmax=1
+set foldlevel=2
+set foldnestmax=10
 set nofoldenable
 
 " SWAP AND BACKUP *************************
@@ -152,7 +142,7 @@ set noswapfile
 
 set undodir=~/.vim/.undo//
 set backupdir=~/.vim/.backup//
-set directory=~/.vim/.saswp//
+set directory=~/.vim/.swp//
 
 " APPAERANCE *******************************
 syntax on
@@ -175,7 +165,7 @@ set wildmenu
 set wildmode=list:longest,list:full
 
 " FILE FIND ******************************
-set path+=**
+" set path+=**
 
 " SEARCHING ******************************
 set hlsearch
@@ -262,9 +252,6 @@ noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
 autocmd FocusGained,BufEnter * :silent! !
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
-
-" Set filetype for bats bash testing tool
-autocmd BufRead,BufNewFile *.bats set filetype=sh
 
 " FUNCTIONS ********************************
 

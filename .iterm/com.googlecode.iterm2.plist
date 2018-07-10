@@ -1229,9 +1229,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1588 448 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1937 483 928 401 1440 0 1920 1080 </string>
+	<string>497 444 918 512 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1080 0 0 1920 1080 </string>
+	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2534 297 570 452 1440 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1436,7 +1436,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>10.604011342005075</real>
+			<real>9.1372323128172592</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2238,7 +2238,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>3.2701161960659899</real>
+			<real>9.5119309168781712</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2951,7 +2951,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-10T21:24:19Z</date>
+	<date>2018-07-04T15:45:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

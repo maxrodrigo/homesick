@@ -1,6 +1,6 @@
 # Applications
 alias cat="pygmentize -g"
-alias v='nvim'
+alias vim='nvim'
 alias irssi=' TERM=screen-256color irssi'
 
 # Based on https://news.ycombinator.com/item?id=11071754

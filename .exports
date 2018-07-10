@@ -16,3 +16,5 @@ export LC_ALL='en_US.UTF-8';
 
 # For irrsi certificate
 export PERL_LWP_SSL_VERIFY_HOSTNAME=0
+
+export VIRTUALENVWRAPPER_PYTHON=$(which python3.6)

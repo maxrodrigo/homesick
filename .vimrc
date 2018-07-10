@@ -13,7 +13,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'gabesoft/vim-ags'
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -35,6 +35,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 
 " Python
+Plug 'ambv/black'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
 
@@ -242,6 +243,7 @@ map <F3> :YcmCompleter GoTo<CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 " MAPPGINS FUNCTIONS ***************************
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>

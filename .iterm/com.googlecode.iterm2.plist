@@ -1229,15 +1229,19 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1588 448 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>497 444 918 512 0 0 1920 1080 </string>
+	<string>3857 366 918 512 3360 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 900 </string>
+	<string>-1920 314 1920 1080 -1920 314 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2534 297 570 452 1440 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>3659 261 1046 639 3360 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>1708 84 570 452 1440 0 1920 1058 </string>
+	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_F906893C-75F9-47A5-B62B-57BD85298FF8</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_F906893C-75F9-47A5-B62B-57BD85298FF8_selection</key>
@@ -2351,7 +2355,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>nvim</string>
+			<string>tmux</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -2951,7 +2955,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-04T15:45:07Z</date>
+	<date>2018-07-20T08:39:40Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3020,7 +3024,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.1.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

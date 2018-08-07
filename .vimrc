@@ -1,3 +1,9 @@
+if exists("$VIRTUAL_ENV")
+    let g:python3_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), "\n", '', 'g')
+else
+    let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
+endif
+
 " Automatically install vim-plug if missing
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -45,7 +51,6 @@ Plug 'mattn/emmet-vim'
 " Fancy stuff
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
-Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -53,14 +58,25 @@ call plug#end()
 
 " NERDTree
 autocmd FileType nerdtree setlocal nolist
-let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
-let NERDTreeChDirMode = 2
-let NERDTreeHightlightCursorline = 1
-let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '.DS_Store', '\.egg-info', '.sass-cache']
-let NERDTreeMinimalUI = 1
-let NERDTreeQuitOnOpen = 1
-let NERDTreeShowHidden = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeHightlightCursorline = 1
+let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '.DS_Store', '\.egg-info', '.sass-cache']
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowHidden = 1
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ 'Modified':  '·',
+    \ 'Staged':    '‧',
+    \ 'Untracked': '?',
+    \ 'Renamed':   '≫',
+    \ 'Unmerged':  '≠',
+    \ 'Deleted':   '✃',
+    \ 'Dirty':     '⁖',
+    \ 'Clean':     '✓',
+    \ 'Unknown':   '⁇'
+    \ }
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -70,6 +86,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_loc_list_height = 5
+let g:syntastic_python_python_exec = 'python3'
 
 " Ariline
 set laststatus=2
@@ -166,7 +183,7 @@ set wildmenu
 set wildmode=list:longest,list:full
 
 " FILE FIND ******************************
-" set path+=**
+set path+=**
 
 " SEARCHING ******************************
 set hlsearch
@@ -233,7 +250,7 @@ nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
 
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
-nnoremap <Space>*       :%s///g
+nnoremap <Space>*       :%s//
 
 " MAPPINGS PLUGINS ***************************
 
@@ -243,7 +260,6 @@ map <F3> :YcmCompleter GoTo<CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 " MAPPGINS FUNCTIONS ***************************
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>

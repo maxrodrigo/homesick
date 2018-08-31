@@ -4,8 +4,8 @@
 	name = "Max Rodrigo"
 	email = contact@maxrodrigo.com
 [core]
-    editor = vim
-    excludesfile = /Users/wxr/.gitignore_global
+    editor = nvim
+    excludesfile = ~/.gitignore_global
 [push]
     default = simple
 [alias]

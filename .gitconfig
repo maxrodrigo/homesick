@@ -34,7 +34,7 @@
     ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
     sl = stash list
-    su = stash push -m
+    su = stash push --include-untracked -m
     so = stash pop
 
     tg = tag -a

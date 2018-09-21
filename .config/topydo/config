@@ -1,9 +1,0 @@
-[topydo]
-filename                  = ~/Documents/todo.txt
-archive_filename          = ~/Documents/done.txt
-
-[edit]
-editor = nvim
-
-[columns]
-column_width = 60

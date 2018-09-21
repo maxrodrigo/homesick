@@ -41,8 +41,12 @@ conf checkout
 1. Checkout the content from the repository to your $HOME
 
 
-If the pulled files already exist git will return an error: `Please move or remove them before you can switch branches.`.  
-Remove or back up the files and re-run `config checkout`.
+If the pulled files already exist git will return an error: `Please move or remove them before you can switch branches.`  
+
+Remove: `conf checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} rm -rf {}`  
+Or backup: `conf checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \ xargs -I{} mv {} .conf-backup/{}`
+
+And re-run: `conf checkout`
 
 As a las step set local to hide files we are not explicitly tracking:
 ```

@@ -1,5 +1,7 @@
-set textwidth=80
-set colorcolumn=80
+set textwidth=100
+let &colorcolumn="80,".join(range(100,999),",")
 let python_highlight_all=1
+
+hi ColorColumn ctermbg=236
 
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>

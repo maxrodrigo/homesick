@@ -7,5 +7,5 @@ alias irssi=' TERM=screen-256color irssi'
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Shortcuts
-alias yd="cd ${HOME}/Code/work/yourdictionary;./app/symfony cc; rm -rf ./app/cache/\*"
-alias personal="${HOME}/Code/personal/maxrodrigo.github.io"
+alias yd="cd ${HOME}/Code/yourdictionary;./app/symfony cc; rm -rf ./app/cache/\*"
+alias personal="${HOME}/Code/maxrodrigo.github.io"

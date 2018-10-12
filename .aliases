@@ -1,5 +1,5 @@
 # Applications
-alias cat="pygmentize -g"
+alias ccat="pygmentize -g"
 alias vim='nvim'
 alias irssi=' TERM=screen-256color irssi'
 

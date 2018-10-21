@@ -26,7 +26,6 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-obsession'
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -43,13 +42,11 @@ Plug 'morhetz/gruvbox'
 " Python
 Plug 'ambv/black'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'tmhedberg/SimpylFold'
 
 " HTML
 Plug 'mattn/emmet-vim'
 
 " Fancy stuff
-Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
@@ -176,7 +173,6 @@ set background=dark
 
 set showmatch " highlight matching [{()}]
 set showcmd
-set cursorline
 set scrolloff=2
 
 set wildmenu
@@ -203,11 +199,10 @@ set complete+=kspell
 setlocal spell
 
 " EXTRAS **********************************
-set ttyfast
+set lazyredraw
 set fileformats=unix
 set mouse=a
 set visualbell t_vb=
-set clipboard=unnamed
 set backspace=indent,eol,start
 
 " Display extra whitespace
@@ -238,12 +233,16 @@ cmap w!! w !sudo tee > /dev/null %
 " Copy current file and line number
 nnoremap <leader>y :let @+=expand("%") . ':' . line(".")<CR>
 
-" Buffer list selector
+" Buffers
 nnoremap gb :ls<CR>:buffer<Space>
 nnoremap gB :ls<CR>:vert belowright sb<Space>
 
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
 " Close buffer and move to the previous one.
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+map <leader>qa :bd<bar>e#<CR><CR>
 
 " bind K to grep word under cursor
 nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
@@ -270,6 +269,7 @@ noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
 autocmd FocusGained,BufEnter * :silent! !
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
+autocmd BufWritePre *.py execute ':Black'
 
 " FUNCTIONS ********************************
 

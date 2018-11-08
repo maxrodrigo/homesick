@@ -26,6 +26,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'alfredodeza/pytest.vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -242,7 +243,7 @@ nnoremap <S-Tab> :bprevious<CR>
 
 " Close buffer and move to the previous one.
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
-map <leader>qa :bd<bar>e#<CR><CR>
+map <leader>qa :bd<bar>e#<bar>bd#<CR><CR>
 
 " bind K to grep word under cursor
 nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
@@ -263,13 +264,17 @@ map <C-n> :NERDTreeToggle<CR>
 " MAPPGINS FUNCTIONS ***************************
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
 
+" Pytest
+nmap <silent><Leader>f <Esc>:Pytest file<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method verbose -s<CR>
+
 " AUTOCMD ***********************************
 
 " Trigger autoread when changing buffers or coming back to vim.
 autocmd FocusGained,BufEnter * :silent! !
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
-autocmd BufWritePre *.py execute ':Black'
 
 " FUNCTIONS ********************************
 

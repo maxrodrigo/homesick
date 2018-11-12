@@ -31,13 +31,13 @@ conf push
 ```
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 echo ".dotfiles" >> .gitignore
-git clone --bare https://github.com/maxrodrigo/homesick $HOME/.dotfiles
+git clone --recursive -j8 --bare https://github.com/maxrodrigo/homesick $HOME/.dotfiles
 conf checkout
 ```
 
 1. Recreate the alias.
 1. The source repository ignores the folder it'll cloned, so to avoid recursion gitignore the repository folder.
-1. Clone the repository into the chosen folder.
+1. Clone the repository into the chosen folder. Submodules included.
 1. Checkout the content from the repository to your $HOME
 
 

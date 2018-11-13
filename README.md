@@ -30,7 +30,7 @@ conf push
 
 ```
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-echo ".dotfiles" >> .gitignore
+echo ".dotfiles" >> $HOME/.gitignore
 git clone --recursive -j8 --bare https://github.com/maxrodrigo/homesick $HOME/.dotfiles
 conf checkout
 ```

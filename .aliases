@@ -1,11 +1,5 @@
 # Applications
-alias ccat="pygmentize -g"
+alias cat="pygmentize -g"
 alias vim='nvim'
 alias irssi=' TERM=screen-256color irssi'
-
-# Based on https://news.ycombinator.com/item?id=11071754
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-
-# Shortcuts
-alias yd="cd ${HOME}/Code/yourdictionary;./app/symfony cc; rm -rf ./app/cache/\*"
-alias personal="${HOME}/Code/maxrodrigo.github.io"

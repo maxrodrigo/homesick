@@ -1,6 +1,6 @@
 # Imports
 # Declare an array variable
-declare -a dotfiles=(".aliases" ".exports")
+declare -a dotfiles=(".aliases" ".exports" ".secrets")
 
 for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df

@@ -1173,8 +1173,6 @@
 	<true/>
 	<key>MaxVertically</key>
 	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1187,11 +1185,6 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
-	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
-	<array>
-		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
-		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
-	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -1220,26 +1213,10 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>605 266 607 279 0 0 1440 900 </string>
-	<key>NSWindow Frame ProfilesPanel</key>
-	<string>339 356 735 382 0 0 1440 900 </string>
-	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>412 527 616 174 0 0 1440 877 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>2090 499 620 392 1440 0 1920 1058 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>1588 448 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>165 180 796 486 0 0 1440 900 </string>
+	<string>-1456 267 796 486 -1920 -30 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 900 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2534 297 570 452 1440 0 1920 1058 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>3659 261 1046 639 3360 0 1920 1058 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>1708 84 570 452 1440 0 1920 1058 </string>
+	<string>-1920 -30 1920 1080 -1920 -30 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02_selection</key>
@@ -2863,6 +2840,8 @@
 			<string>/Users/wxr</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
@@ -2870,7 +2849,9 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>10074E34-FD29-42C5-9571-4968AFB39619</string>
+	<string>9331110D-2C76-4F22-BD7A-57F94F18D8BC</string>
+	<key>NoSyncLastTipTime</key>
+	<real>563818472.30160999</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2878,7 +2859,11 @@
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>532882071.62861699</real>
+	<real>563818421.10625696</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2941,29 +2926,27 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/wxr/.iterm</string>
+	<string>/Users/max/.iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
-	<key>SUAutomaticallyUpdate</key>
-	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=96</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=84</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-06T14:38:00Z</date>
+	<date>2018-11-19T10:57:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3032,7 +3015,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.2</string>
+	<string>3.2.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

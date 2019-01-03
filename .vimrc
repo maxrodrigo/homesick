@@ -186,7 +186,6 @@ set path+=**
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase
 set nolazyredraw
 set magic
 
@@ -243,7 +242,7 @@ nnoremap <S-Tab> :bprevious<CR>
 
 " Close buffer and move to the previous one.
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
-map <leader>qa :bd<bar>e#<bar>bd#<CR><CR>
+map <leader>qa :%bd<bar>e#<bar>bd#<CR><CR>
 
 " bind K to grep word under cursor
 nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
@@ -291,9 +290,7 @@ function! OpenMarkdownPreview() abort
         call jobstop(s:markdown_job_id)
         unlet s:markdown_job_id
     endif
-    let available_port = system(
-                            \ "lsof -s tcp:listen -i :40500-40800 | awk -F ' *|:' '{ print $10 }' | sort -n | tail -n1"
-                            \ ) + 1
+    let available_port = system("lsof -s tcp:listen -i :40500-40800 | awk -F ' *|:' '{ print $10 }' | sort -n | tail -n1") + 1
     if available_port == 1 | let available_port = 40500 | endif
     let job_id = jobstart('grip ' . shellescape(expand('%:p')) . ' :' . available_port)
     if job_id <= 0 | return | endif

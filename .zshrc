@@ -16,5 +16,4 @@ show_virtual_env() {
     echo "($(basename $VIRTUAL_ENV))"
   fi
 }
-export -f show_virtual_env
 PS1='$(show_virtual_env)'$PS1

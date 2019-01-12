@@ -60,7 +60,7 @@ let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeHightlightCursorline = 1
-let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '.DS_Store', '\.egg-info', '.sass-cache']
+let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '.DS_Store', '\.egg-info', '.sass-cache', '.direnv']
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 

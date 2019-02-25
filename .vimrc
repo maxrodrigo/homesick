@@ -13,22 +13,22 @@ endif
 
 call plug#begin()
 
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
-Plug 'sheerun/vim-polyglot'
 Plug 'gabesoft/vim-ags'
-
+Plug 'kien/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'tmhedberg/SimpylFold'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'alfredodeza/pytest.vim'
-
-Plug 'editorconfig/editorconfig-vim'
 
 " Interface
 Plug 'scrooloose/nerdtree'
@@ -42,6 +42,7 @@ Plug 'morhetz/gruvbox'
 
 " Python
 Plug 'ambv/black'
+Plug 'alfredodeza/pytest.vim'
 Plug 'vim-scripts/indentpython.vim'
 
 " HTML
@@ -134,6 +135,10 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
 
+" SimpleFold
+let g:SimpylFold_docstring_preview = 1
+
+
 " INDENTATION *****************************
 set linebreak
 
@@ -147,8 +152,6 @@ set autoindent
 
 " FOLDING **********************************
 set foldmethod=indent
-set foldlevel=2
-set foldnestmax=10
 set nofoldenable
 
 " SWAP AND BACKUP *************************
@@ -204,6 +207,7 @@ set fileformats=unix
 set mouse=a
 set visualbell t_vb=
 set backspace=indent,eol,start
+set updatetime=100
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -251,39 +255,31 @@ nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>*       :%s//
 
-" MAPPINGS PLUGINS ***************************
+" Exit TERMINAL MODE
+tnoremap <Esc> <C-\><C-n>
+tnoremap <i> <G><A>
 
-" YouCompleteMe
-" Goto definition with F3
-map <F3> :YcmCompleter GoTo<CR>
+" MAPPINGS PLUGINS ***************************
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " MAPPGINS FUNCTIONS ***************************
 noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
+nnoremap <space> za
+vnoremap <space> zf
 
 " Pytest
-nmap <silent><Leader>f <Esc>:Pytest file<CR>
-nmap <silent><Leader>c <Esc>:Pytest class<CR>
-nmap <silent><Leader>m <Esc>:Pytest method verbose -s<CR>
+nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
+nmap <silent><Leader>f <Esc>:Pytest function verbose<CR>
 
 " AUTOCMD ***********************************
 
 " Trigger autoread when changing buffers or coming back to vim.
+autocmd BufWritePre *.py execute ':Black'
 autocmd FocusGained,BufEnter * :silent! !
-autocmd BufWritePre * call StripTrailingWhitespace()
-autocmd FileType markdown let b:noStripWhitespace=1
 
 " FUNCTIONS ********************************
-
-fun! StripTrailingWhitespace()
-    " Only strip if the b:noStripeWhitespace variable isn't set
-    if exists('b:noStripWhitespace')
-        return
-    endif
-    %s/\s\+$//e
-endfun
 
 function! OpenMarkdownPreview() abort
     if exists('s:markdown_job_id')

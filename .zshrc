@@ -17,3 +17,8 @@ show_virtual_env() {
   fi
 }
 PS1='$(show_virtual_env)'$PS1
+
+# added by travis gem
+[ -f /Users/max/.travis/travis.sh ] && source /Users/max/.travis/travis.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

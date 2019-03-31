@@ -22,3 +22,19 @@ PS1='$(show_virtual_env)'$PS1
 [ -f /Users/max/.travis/travis.sh ] && source /Users/max/.travis/travis.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+# Speeding up ZSH
+
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/max/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/max/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/max/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/max/google-cloud-sdk/completion.zsh.inc'; fi

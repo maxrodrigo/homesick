@@ -54,4 +54,5 @@
 [diff]
     tool = vimdiff
 [difftool]
+    tool = nvim
     prompt = false

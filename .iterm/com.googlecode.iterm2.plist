@@ -1158,7 +1158,7 @@
 	<key>HotkeyWindowIgnoresSpotlight</key>
 	<true/>
 	<key>IRMemory</key>
-	<integer>4</integer>
+	<integer>0</integer>
 	<key>IncludePasteHistoryInAdvancedPaste</key>
 	<true/>
 	<key>JobName</key>
@@ -1242,9 +1242,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>549 1566 620 392 -101 1050 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>4064 367 918 452 3600 36 1920 1080 </string>
+	<string>464 367 796 486 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1050 0 0 1680 1050 </string>
+	<string>461 16 1200 1034 0 0 1680 1050 </string>
 	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02_selection</key>
@@ -2035,7 +2035,7 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.19375198286802031</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unicode Normalization</key>
@@ -2982,7 +2982,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-05-07T14:10:27Z</date>
+	<date>2019-06-27T04:41:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2992,7 +2992,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -3048,7 +3048,7 @@
 	<key>WindowStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
-	<string>/-+\~_.</string>
+	<string></string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>

@@ -21,7 +21,6 @@ Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
-Plug 'tmhedberg/SimpylFold'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -50,6 +49,7 @@ Plug 'mattn/emmet-vim'
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -135,9 +135,8 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
 
-" SimpleFold
-let g:SimpylFold_docstring_preview = 1
-
+" Vim-Tmux-Navigator
+let g:tmux_navigator_disable_when_zoomed = 1 " Disable tmux navigator when zooming the Vim pane
 
 " INDENTATION *****************************
 set linebreak
@@ -224,12 +223,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-" Navigate through panels
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %

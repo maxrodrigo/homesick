@@ -4,4 +4,4 @@ let python_highlight_all=1
 
 hi ColorColumn ctermbg=236
 
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>

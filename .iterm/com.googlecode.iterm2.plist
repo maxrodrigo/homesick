@@ -1244,7 +1244,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>464 367 796 486 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>461 16 1200 1034 0 0 1680 1050 </string>
+	<string>0 0 1680 1050 0 0 1680 1050 </string>
 	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E20BC48A-1AA6-447F-9256-D9B93DAF6F02_selection</key>
@@ -2992,7 +2992,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>

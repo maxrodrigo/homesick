@@ -41,7 +41,6 @@ Plug 'morhetz/gruvbox'
 
 " Python
 Plug 'ambv/black'
-Plug 'alfredodeza/pytest.vim'
 Plug 'vim-scripts/indentpython.vim'
 
 " HTML
@@ -247,6 +246,10 @@ nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>*       :%s//
+
+" Folding
+nnoremap <space> za
+vnoremap <space> zf
 
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>

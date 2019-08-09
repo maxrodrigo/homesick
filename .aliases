@@ -1,5 +1,4 @@
 # Applications
-alias cat="pygmentize -g"
 alias vim='nvim'
 alias irssi=' TERM=screen-256color irssi'
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'

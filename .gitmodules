@@ -1,6 +1,0 @@
-[submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule ".zim"]
-	path = .zim
-	url = https://github.com/Eriner/zim.git

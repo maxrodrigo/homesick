@@ -46,6 +46,9 @@ Plug 'vim-scripts/indentpython.vim'
 " HTML
 Plug 'mattn/emmet-vim'
 
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
 " Fancy stuff
 Plug 'vimwiki/vimwiki'
 Plug 'christoomey/vim-tmux-navigator'
@@ -261,7 +264,6 @@ tnoremap <i> <G><A>
 map <C-n> :NERDTreeToggle<CR>
 
 " MAPPGINS FUNCTIONS ***************************
-noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
 nnoremap <space> za
 vnoremap <space> zf
 
@@ -274,18 +276,3 @@ nmap <silent><Leader>f <Esc>:Pytest function verbose<CR>
 " Trigger autoread when changing buffers or coming back to vim.
 autocmd BufWritePre *.py execute ':Black'
 autocmd FocusGained,BufEnter * :silent! !
-
-" FUNCTIONS ********************************
-
-function! OpenMarkdownPreview() abort
-    if exists('s:markdown_job_id')
-        call jobstop(s:markdown_job_id)
-        unlet s:markdown_job_id
-    endif
-    let available_port = system("lsof -s tcp:listen -i :40500-40800 | awk -F ' *|:' '{ print $10 }' | sort -n | tail -n1") + 1
-    if available_port == 1 | let available_port = 40500 | endif
-    let job_id = jobstart('grip ' . shellescape(expand('%:p')) . ' :' . available_port)
-    if job_id <= 0 | return | endif
-    let s:markdown_job_id = job_id
-    silent exec '!open http://localhost:' . available_port
-endfunction

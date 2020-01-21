@@ -16,3 +16,7 @@ export LC_ALL='en_US.UTF-8';
 
 # For irrsi certificate
 export PERL_LWP_SSL_VERIFY_HOSTNAME=0
+
+# Jekyll
+export GEM_HOME=${HOME}/gems
+export PATH=${HOME}/gems/bin:$PATH

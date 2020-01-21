@@ -163,16 +163,16 @@ formats = {
     new_topic = "%Y┌─┄┄─────┘%n\012%Y│ %wtopic %b'$2' %Nset by%b $0\012%Y└─┄┄─┄┄──┐ ";
     endofnames = "%Y└─┄┄─┄┄──┐ %btotal: {hilight $2} ops, {hilight $3} halfops, {hilight $4} voices, {hilight $5} normies%n";
     #nick padding
-    pubmsg = "{pubmsgnick $2 {pubnick \00300$[0]0}}$1";
-    own_msg = "{ownmsgnick {ownnick $[-16]0$2}}$1";
-    own_msg_channel = "{ownmsgnick {ownnick $[-16]0$3}{msgchannel $1}}$2";
-    own_msg_private_query = "{ownprivmsgnick {ownprivnick $[-16]2}}$1";
-    pubmsg_me = "{pubmsgmenick {menick $[-16]0}$2}$1";
-    pubmsg_me_channel = "{pubmsgmenick {menick $[-16]0$3}{msgchannel $1}}$2";
-    pubmsg_hilight_channel = "{pubmsghinick $0 $[-16]1$4{msgchannel $2}}$3";
-    pubmsg_hilight = "{pubmsghinick $0 $0 $[-16]1$3%n}$2";
-    pubmsg_channel = "{pubmsgnick {pubnick %B$[-16]0}$2}$1";
-    msg_private_query = "{privmsgnick $[-16]0}$2";
+    pubmsg = "{pubmsgnick $2 {pubnick \00307$[0]0}}$1";
+    own_msg = "{ownmsgnick $nickalign$2 {ownnick $nickcolor$0$nicktrunc}}$1";
+    own_msg_channel = "{ownmsgnick $nickalign$3 {ownnick $nickcolor$0$nicktrunc}{msgchannel $1}}$2";
+    own_msg_private_query = "{ownprivmsgnick $nickalign{ownprivnick $nickcolor$2$nicktrunc}}$1";
+    pubmsg_me = "{pubmsgmenick $nickalign$2 {menick $[.16]0$nicktrunc}}$1";
+    pubmsg_me_channel = "{pubmsgmenick $nickalign$3 {menick $[.16]0$nicktrunc}{msgchannel $1}}$2";
+    pubmsg_hilight_channel = "{pubmsghinick $0 $nickalign$4 $[.16]1$nicktrunc{msgchannel $2}}$3";
+    pubmsg_hilight = "{pubmsghinick $0 $nickalign$3 $[.16]1$nicktrunc}$2";
+    pubmsg_channel = "{pubmsgnick $nickalign$3 {pubnick $nickcolor$[.16]0$nicktrunc}{msgchannel $1}}$2";
+    msg_private_query = "{privmsgnick $nickalign$nickcolor$0$nicktrunc}$2";
   };
   "fe-common/irc" = {
     chanmode_change = "%n mode %Y┄┄─┤ %w(%B{channick $1}%w) %nby %B$2";
@@ -198,9 +198,9 @@ formats = {
     channel_synced = "%n sync %Y┄┄─┤ %nin {hilight $1} secs";
     channel_created = "%n      %Y┄┄─┤ %ncreated $1";
     action_core = "%b$[-8]0 %Y│ %b$1";
-    own_action = "{ownaction $[-14]0} $1";
-    action_private = "{pvtaction $[-14]0}$1";
-    action_private_query = "{pvtaction_query $[-14]0} $2";
-    action_public = "{pubaction $[-14]0}$1";
+    own_action = "$nickalign{ownaction $0$nicktrunc}$1";
+    action_private = "$nickalign{pvtaction $0$nicktrunc}$2";
+    action_private_query = "$nickalign{pvtaction_query $0$nicktrunc}$2";
+    action_public = "$nickalign{pubaction $0$nicktrunc}$1";
   };
 };

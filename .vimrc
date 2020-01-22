@@ -67,18 +67,6 @@ let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '.DS_Store', '\.egg-
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 
-let g:NERDTreeIndicatorMapCustom = {
-    \ 'Modified':  '·',
-    \ 'Staged':    '‧',
-    \ 'Untracked': '?',
-    \ 'Renamed':   '≫',
-    \ 'Unmerged':  '≠',
-    \ 'Deleted':   '✃',
-    \ 'Dirty':     '⁖',
-    \ 'Clean':     '✓',
-    \ 'Unknown':   '⁇'
-    \ }
-
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -91,11 +79,10 @@ let g:syntastic_python_flake8_args='--max-line-length=100'
 
 " Ariline
 set laststatus=2
-let g:airline_theme='gruvbox'
+let g:airline_theme='zenburn'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_powerline_fonts = 1
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
@@ -170,7 +157,7 @@ syntax on
 set encoding=utf-8
 set number
 
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ Mono:h11
+set guifont=DejaVu\ Sans\ mono:h9
 set guioptions=aAce
 
 colorscheme gruvbox

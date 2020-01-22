@@ -1,10 +1,11 @@
 ! URxvt settings
-URxvt.borderless:   true
-URxvt.depth:        32
-URxvt.geometry:     90x30
-URxvt.loginShell:   true
-URxvt.scrollBar:    false
-URxvt.transparent:  false
+URxvt.borderless:       true
+URxvt.externalBorder:   0
+URxvt.depth:            32
+URxvt.geometry:         90x30
+URxvt.loginShell:       true
+URxvt.scrollBar:        false
+URxvt.transparent:      false
 
 ! Fonts
 URxvt.font:         xft:DejaVu Sans Mono:size=9

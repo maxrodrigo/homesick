@@ -8,9 +8,6 @@ done
 # Zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
 
-# Tmux
-tmux
-
 # direnv
 eval "$(direnv hook zsh)"
 show_virtual_env() {

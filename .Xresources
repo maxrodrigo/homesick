@@ -1,16 +1,15 @@
 ! URxvt settings
-URxvt.background:       rgba:0000/0000/0200/c800
 URxvt.borderless:       true
 URxvt.externalBorder:   0
+URxvt.internalBorder:   20
 URxvt.depth:            32
-URxvt.geometry:         180x50
 URxvt.loginShell:       true
 URxvt.scrollBar:        false
-URxvt.shading:          20
-URxvt.transparent:      true
+URxvt.cursorUnderline:  true
 
 ! Fonts
-URxvt.font:         xft:DejaVu Sans Mono:size=9
+URxvt.font:         xft:DejaVu Sans Mono:size=9:Regular
+URxvt.boldFont:     xft:DejaVu Sans Mono:size=9:Regular
 URxvt.letterSpace:  -1
 
 ! XFT
@@ -24,37 +23,37 @@ Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
 ! special
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
-*.cursorColor:  #c5c8c6
+*.foreground:   #9ca1b8
+*.background:   #0f0f13
+*.cursorColor:  #9ca1b8
 
 ! black
-*.color0:       #282a2e
-*.color8:       #373b41
+*.color0:       #484e5b
+*.color8:       #5b6373
 
 ! red
-*.color1:       #a54242
-*.color9:       #cc6666
+*.color1:       #e75e87
+*.color9:       #e5a9bb
 
 ! green
-*.color2:       #8c9440
-*.color10:      #b5bd68
+*.color2:       #83d1a2
+*.color10:      #b6dac4
 
 ! yellow
-*.color3:       #de935f
-*.color11:      #f0c674
+*.color3:       #dc8b73
+*.color11:      #e9c5bb
 
 ! blue
-*.color4:       #5f819d
-*.color12:      #81a2be
+*.color4:       #639ce8
+*.color12:      #a1c1eb
 
 ! magenta
-*.color5:       #85678f
-*.color13:      #b294bb
+*.color5:       #b972e9
+*.color13:      #d3a6f1
 
 ! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
+*.color6:       #62b3e4
+*.color14:      #acd1e8
 
 ! white
 *.color7:       #707880

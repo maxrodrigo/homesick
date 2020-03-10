@@ -51,7 +51,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'
-Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -80,6 +79,7 @@ let g:syntastic_python_flake8_args='--max-line-length=100'
 " Ariline
 set laststatus=2
 let g:airline_theme='zenburn'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -156,12 +156,10 @@ syntax on
 
 set encoding=utf-8
 set number
-
-set guifont=DejaVu\ Sans\ mono:h9
 set guioptions=aAce
 
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
 
 set showmatch " highlight matching [{()}]
 set showcmd
@@ -195,7 +193,6 @@ set fileformats=unix
 set mouse=a
 set visualbell t_vb=
 set backspace=indent,eol,start
-set updatetime=100
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -237,22 +234,16 @@ nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>*       :%s//
 
-" Folding
-nnoremap <space> za
-vnoremap <space> zf
-
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>
 tnoremap <i> <G><A>
 
-" MAPPINGS PLUGINS ***************************
+" PLUGINS MAPPINGS ***************************
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " MAPPGINS FUNCTIONS ***************************
-nnoremap <space> za
-vnoremap <space> zf
 
 " Pytest
 nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
@@ -260,6 +251,5 @@ nmap <silent><Leader>f <Esc>:Pytest function verbose<CR>
 
 " AUTOCMD ***********************************
 
-" Trigger autoread when changing buffers or coming back to vim.
 autocmd BufWritePre *.py execute ':Black'
 autocmd FocusGained,BufEnter * :silent! !

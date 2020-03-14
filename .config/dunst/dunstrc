@@ -4,29 +4,18 @@
     follow = mouse
     geometry = "400x5-5+5"
 
-    padding = 10
+    padding = 18
     horizontal_padding = 20
 
-    frame_width = 1
-    separator_color = frame
-    separator_height = 1
+    frame_width = 0
+    separator_height = 8
+    separator_color = auto
     idle_threshold = 120
 
     ### Text ###
 
-    font = Monospace 8
+    font = DroidSansMono 8
     markup = full
-
-    # The format of the message.  Possible variables are:
-    #   %a  appname
-    #   %s  summary
-    #   %b  body
-    #   %i  iconname (including its path)
-    #   %I  iconname (without its path)
-    #   %p  progress value if set ([  0%] to [100%]) or nothing
-    #   %n  progress value if set without any extra characters
-    #   %%  Literal %
-    # Markup is allowed
     format = "<b>%s</b>\n%b\n%a"
     show_indicators = no
 
@@ -34,7 +23,6 @@
 
     dmenu = /usr/bin/rofi -p dunst:
     browser = /usr/bin/firefox
-    startup_notification = true
 
     ### mouse
 

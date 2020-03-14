@@ -8,8 +8,7 @@ URxvt.scrollBar:        false
 URxvt.cursorUnderline:  true
 
 ! Fonts
-URxvt.font:         xft:DejaVu Sans Mono:size=9:Regular
-URxvt.boldFont:     xft:DejaVu Sans Mono:size=9:Regular
+URxvt.font:         xft:DroidSansMono Nerd Font:size=9
 URxvt.letterSpace:  -1
 
 ! XFT

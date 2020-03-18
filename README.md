@@ -27,21 +27,17 @@ conf push
 
 ## Replicate your home directory onto a new system
 
+1. Recreate the alias.
+1. The source repository ignores the folder it'll cloned, so to avoid recursion gitignore the repository folder.
+1. Clone the repository into the chosen folder.
+1. Checkout the content from the repository to your `$HOME`.
 
 ```
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 echo ".dotfiles" >> $HOME/.gitignore
 git clone --bare https://github.com/maxrodrigo/homesick $HOME/.dotfiles
-conf submodule update --recursive --remote
 conf checkout
 ```
-
-1. Recreate the alias.
-1. The source repository ignores the folder it'll cloned, so to avoid recursion gitignore the repository folder.
-1. Clone the repository into the chosen folder.
-1. Update submodules
-1. Checkout the content from the repository to your $HOME
-
 
 If the pulled files already exist git will return an error: `Please move or remove them before you can switch branches.`  
 
@@ -54,7 +50,6 @@ As a las step set local to hide files we are not explicitly tracking:
 ```
 conf config --local status.showUntrackedFiles no
 ```
-
 
 ## Thanks
 

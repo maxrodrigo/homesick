@@ -8,11 +8,30 @@ super + Return
 
 # program launcher
 super + @space
-    rofi -show drun
+    rofi -show combi -combi-modi window,drun -font "DroidSansMono Nerd Font 9" -theme "Pop-Dark"
 
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
+
+# send a notif of the time and battery
+super + F1
+    notify-send -u normal -a "" \
+        "System Information" \
+        "$(date -R)\
+        \n\nNordVPN $(nordvpn status | cut -d":" -f2 | head -2 | paste -sd ":" - | xargs)\
+        \n$(${HOME}/.local/share/tresorit/tresorit-cli status | head -1 | sed "s/\ daemon:\ */:\ /")\
+        \n\n$(acpi)"
+
+# Screenshots
+
+
+# Print
+Print
+    maim -s ~/Pictures/screenshots/ss_$(date +"%Y%m%d_%H%M%S").png
+
+shift + Print
+    maim -s | xclip -selection clipboard -t image/png
 
 # MediaKeys
 XF86Audio{RaiseVolume,LowerVolume,Mute}
@@ -52,6 +71,10 @@ super + g
 # set the window state
 super + {t,shift + t,s,f}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Toggle floating
+super + d
+    bspc node focused -t \~floating
 
 # set the node flags
 super + ctrl + {m,x,y,z}

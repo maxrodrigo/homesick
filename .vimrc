@@ -1,9 +1,3 @@
-if exists("$VIRTUAL_ENV")
-    let g:python3_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), "\n", '', 'g')
-else
-    let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
-endif
-
 " Automatically install vim-plug if missing
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -43,10 +37,8 @@ Plug 'morhetz/gruvbox'
 Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'vim-scripts/indentpython.vim'
 
-" HTML
+" Other Tools
 Plug 'mattn/emmet-vim'
-
-" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Fancy stuff
@@ -79,7 +71,6 @@ let g:syntastic_python_flake8_args='--max-line-length=100'
 " Ariline
 set laststatus=2
 let g:airline_theme='zenburn'
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -123,9 +114,6 @@ let g:ycm_complete_in_strings = 1
 
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
-
-" Vim-Tmux-Navigator
-let g:tmux_navigator_disable_when_zoomed = 1 " Disable tmux navigator when zooming the Vim pane
 
 " INDENTATION *****************************
 set linebreak
@@ -204,12 +192,6 @@ endif
 
 " MAPPINGS **********************************
 
-" Disable arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
 " Use ctrl-[hjkl] to select the active split!
 noremap <silent> <c-k> :wincmd k<CR>
 noremap <silent> <c-j> :wincmd j<CR>
@@ -222,7 +204,7 @@ cmap w!! w !sudo tee > /dev/null %
 " Copy current file and line number
 nnoremap <leader>y :let @+=expand("%") . ':' . line(".")<CR>
 
-" Buffers
+" Buffers navigation
 nnoremap gb :ls<CR>:buffer<Space>
 nnoremap gB :ls<CR>:vert belowright sb<Space>
 
@@ -236,6 +218,7 @@ map <leader>qa :%bd<bar>e#<bar>bd#<CR><CR>
 " bind K to grep word under cursor
 nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
 
+" Replace mappings
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap <Space>*       :%s//

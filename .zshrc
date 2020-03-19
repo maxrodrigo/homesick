@@ -1,37 +1,29 @@
 # Minimal ZSH Plugin Manager
-plugins_path=${ZDOTDIR:-$HOME}/.zsh_plugins
-plugins=(
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-completions
-  zsh-users/zsh-history-substring-search
-)
+zdir=${ZDOTDIR:-$HOME}/.zsh_plugins
 
-for plugin in $plugins; do
-  # Clone from GitHub if it doesn't exist.
-  if [[ ! -d $plugins_path/$plugin ]]; then
-    mkdir -p $plugins_path/${plugin%/*}
-    git clone --depth 1 --recursive https://github.com/$plugin.git $plugins_path/$plugin
+zadd() {
+  local zmodule=${1:t} zurl=${1} zscripts
+  local zpath=${zdir}/${zmodule}
+
+  if [[ ! -d ${zpath} ]]; then
+    mkdir -p ${zpath}
+    git clone -q --recursive https://github.com/${zurl}.git ${zpath}
   fi
-  # Load.
-  for plugin_init in ${plugin#*/}.zsh ${plugin#*/}.plugin.zsh ${plugin#*/}.sh; do
-    if [[ -f $plugins_path/$plugin/$plugin_init ]]; then
-      source $plugins_path/$plugin/$plugin_init
-      break
-    fi
-  done
-done
 
-# clean up
-unset plugins
-unset plugin
-unset plugin_init
+  zscripts=(${zpath}/(init.zsh|${zmodule:t}.(zsh|plugin.zsh|zsh-theme|sh))(NOL[1]))
+  source ${zscripts}
+}
 
-# Update plugins
-alias zupdate="find $plugins_path -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull"
+alias zupdate="find ${zdir} -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+# *******************************************
+
+# Plugins
+zadd zsh-users/zsh-autosuggestions
+zadd zsh-users/zsh-completions
+zadd zsh-users/zsh-history-substring-search
 
 # Imports
 declare -a dotfiles=(".aliases" ".exports")
-
 for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df
 done

@@ -5,9 +5,6 @@ for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df
 done
 
-# Zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
-
 # direnv
 eval "$(direnv hook zsh)"
 show_virtual_env() {

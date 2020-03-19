@@ -7,7 +7,7 @@ zadd() {
 
   if [[ ! -d ${zpath} ]]; then
     mkdir -p ${zpath}
-    git clone -q --recursive https://github.com/${zurl}.git ${zpath}
+    git clone --recursive https://github.com/${zurl}.git ${zpath}
   fi
 
   local zscripts=(${zpath}/(init.zsh|${zmodule:t}.(zsh|plugin.zsh|zsh-theme|sh))(NOL[1]))
@@ -15,15 +15,21 @@ zadd() {
 }
 
 alias zupdate="find ${zdir} -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
-# *******************************************
 
 # Plugins
+zadd zimfw/gitster
+zadd zimfw/history
+zadd zsh-users/zsh-syntax-highlighting
+zadd zsh-users/zsh-history-substring-search
 zadd zsh-users/zsh-autosuggestions
 zadd zsh-users/zsh-completions
-zadd zsh-users/zsh-history-substring-search
+
+# zsh-history-substring-search
+bindkey '\eOA' history-substring-search-up # or ^[OA
+bindkey '\eOB' history-substring-search-down # or ^[OB
 
 # Imports
-declare -a dotfiles=(".aliases" ".exports")
+typeset -a dotfiles=(".aliases" ".exports")
 for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df
 done

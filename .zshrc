@@ -1,8 +1,8 @@
 # Minimal ZSH Plugin Manager
-zdir=${ZDOTDIR:-$HOME}/.zsh_plugins
+typeset zdir=${ZDOTDIR:-$HOME}/.zsh_plugins
 
 zadd() {
-  local zmodule=${1:t} zurl=${1} zscripts
+  local zmodule=${1:t} zurl=${1}
   local zpath=${zdir}/${zmodule}
 
   if [[ ! -d ${zpath} ]]; then
@@ -10,7 +10,7 @@ zadd() {
     git clone -q --recursive https://github.com/${zurl}.git ${zpath}
   fi
 
-  zscripts=(${zpath}/(init.zsh|${zmodule:t}.(zsh|plugin.zsh|zsh-theme|sh))(NOL[1]))
+  local zscripts=(${zpath}/(init.zsh|${zmodule:t}.(zsh|plugin.zsh|zsh-theme|sh))(NOL[1]))
   source ${zscripts}
 }
 

@@ -1,9 +1,11 @@
 # Minimal ZSH Plugin Manager
 typeset zdir=${ZDOTDIR:-$HOME}/.zsh_plugins
+typeset -a zmods
 
 zadd() {
   local zmodule=${1:t} zurl=${1}
   local zpath=${zdir}/${zmodule}
+  zmods+=(${zpath})
 
   if [[ ! -d ${zpath} ]]; then
     mkdir -p ${zpath}
@@ -14,6 +16,7 @@ zadd() {
   source ${zscripts}
 }
 
+alias zclean="rm -rf $(echo ${zmods} $(ls -d ${zdir}/*) | tr ' ' '\n' | sort | uniq -u)"
 alias zupdate="find ${zdir} -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 # Plugins

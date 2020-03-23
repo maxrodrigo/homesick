@@ -4,10 +4,8 @@ alias irssi=' TERM=screen-256color irssi'
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Helpers
-alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
+alias ping='ping -c 5'
 
 # Nifty extras
-alias nethack='telnet nethack.alt.org'
 alias pycclean='find . -name "*.pyc" -exec rm {} \; && find . -name "__pycache__" -exec rm -rf {} \;'
 alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
-alias watch='_() { while :; do clear; $1; sleep $2; done }; _'

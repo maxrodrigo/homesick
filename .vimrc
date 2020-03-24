@@ -51,10 +51,9 @@ call plug#end()
 " NERDTree
 autocmd FileType nerdtree setlocal nolist
 let g:NERDTreeAutoDeleteBuffer = 1
-let g:NERDTreeBookmarksFile = $HOME.'/.vim/NERDTree-bookmarks'
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeHightlightCursorline = 1
-let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '.DS_Store', '\.egg-info', '.sass-cache', '.direnv']
+let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '\.egg-info', '.sass-cache', '.direnv']
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 
@@ -220,8 +219,6 @@ nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
 
 " Replace mappings
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
-nnoremap <Space>%       :%s/\<<C-r>=expand('<cword>')<CR>\>/
-nnoremap <Space>*       :%s//
 
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>

@@ -26,12 +26,10 @@ Plug 'tpope/vim-surround'
 " Interface
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Colors
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 " Python
 Plug 'psf/black', { 'tag': '19.10b0' }
@@ -69,7 +67,7 @@ let g:syntastic_python_flake8_args='--max-line-length=100'
 
 " Ariline
 set laststatus=2
-let g:airline_theme='zenburn'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -94,6 +92,7 @@ endif
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 let g:vimwiki_autowriteall = 1
+let g:vimwiki_folding = 'list'
 
 " UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -127,16 +126,16 @@ set autoindent
 
 " FOLDING **********************************
 set foldmethod=indent
-set nofoldenable
+set foldlevelstart=20
 
 " SWAP AND BACKUP *************************
-set undofile
+set swapfile
 set backupcopy=yes
-set noswapfile
+set undofile
 
-set undodir=~/.vim/.undo//
-set backupdir=~/.vim/.backup//
-set directory=~/.vim/.swp//
+set undodir=~/.vim/cache//
+set backupdir=~/.vim/cache//
+set directory=~/.vim/cache//
 
 " APPAERANCE *******************************
 syntax on
@@ -182,7 +181,13 @@ set visualbell t_vb=
 set backspace=indent,eol,start
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set list
+set listchars=
+set listchars+=tab:»·
+set listchars+=trail:·
+set listchars+=extends:»
+set listchars+=precedes:«
+set listchars+=nbsp:░
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -218,7 +223,7 @@ map <leader>qa :%bd<bar>e#<bar>bd#<CR><CR>
 nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
 
 " Replace mappings
-nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
+nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>//g<left><left>
 
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>

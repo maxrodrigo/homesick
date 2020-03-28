@@ -4,14 +4,13 @@ sxhkd &
 dunst &
 
 setxkbmap -layout us -variant altgr-intl
-feh --bg-scale ~/Pictures/wallpapers/bar.jpg
+feh --bg-scale ~/Pictures/wallpapers/cybercity.jpg
 
 for m in $(bspc query -M); do bspc monitor $m -d I II III;done
 
 bspc config remove_disabled_monitors  true
 bspc config remove_unplugged_monitors true
 
-bspc config border_width        1
 bspc config window_gap          20
 bspc config bottom_padding      0
 bspc config top_padding         0
@@ -24,6 +23,8 @@ bspc config focus_follows_pointer true
 bspc config pointer _modifier     mod4
 bspc config pointer _action1      move
 
-bspc config normal_border_color   "#0f0f13"
-bspc config focused_border_color  "#0f0f13"
-bspc config active_border_color   "#dc8b73"
+color=$(xrdb -query | awk '/\*.background/ { printf $2 }')
+color_alt=$(xrdb -query | awk '/\*.color8/ { printf $2 }')
+bspc config normal_border_color   "${color}"
+bspc config focused_border_color  "${color}"
+bspc config active_border_color   "${color_alt}"

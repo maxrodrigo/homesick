@@ -24,9 +24,6 @@ super + F1
         \n\n$(acpi)"
 
 # Screenshots
-
-
-# Print
 Print
     maim -s ~/Pictures/screenshots/ss_$(date +"%Y%m%d_%H%M%S").png
 
@@ -51,6 +48,14 @@ super + alt + {q,r}
 # close and kill
 super + {_,shift + }w
     bspc node -{c,k}
+
+# Rotate nodes tree
+super + {_,shift +} r
+    bspc node @/ -R {90,270}
+
+# Make the split ratios equal/balanced
+super + shift + {e,b}
+    bspc node @/ {--equalize,--balance}
 
 # alternate between the tiled and monocle layout
 super + m

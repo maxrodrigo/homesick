@@ -2,7 +2,7 @@
 
 [global]
     follow = mouse
-    geometry = "400x5-5+5"
+    geometry = "300x10-10+20"
 
     padding = 18
     horizontal_padding = 20
@@ -37,19 +37,19 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#0c1519"
-    foreground = "#5C7986"
-    frame_color = "#5C7986"
+    background = "#22262e"
+    foreground = "#cccccc"
+    frame_color = "#89b8c2"
     timeout = 10
 
 [urgency_normal]
-    background = "#0c1519"
-    foreground = "#5C7986"
-    frame_color = "#5C7986"
+    background = "#161821"
+    foreground = "#c6c8d1"
+    frame_color = "#84a0c6"
     timeout = 10
 
 [urgency_critical]
-    background = "#0c1519"
-    foreground = "#5C7986"
-    frame_color = "#5C7986"
+    background = "#e27878"
+    foreground = "#161821"
+    frame_color = "#e27878"
     timeout = 0

@@ -26,8 +26,7 @@ Plug 'tpope/vim-surround'
 " Interface
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-airline/vim-airline'
-
+Plug 'itchyny/lightline.vim'
 " Colors
 Plug 'gruvbox-community/gruvbox'
 
@@ -65,13 +64,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_loc_list_height = 3
 let g:syntastic_python_flake8_args='--max-line-length=100'
 
-" Ariline
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
@@ -92,7 +84,6 @@ endif
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 let g:vimwiki_autowriteall = 1
-let g:vimwiki_folding = 'list'
 
 " UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -143,6 +134,7 @@ syntax on
 set encoding=utf-8
 set number
 set guioptions=aAce
+set noshowmode " lightline shows the mode
 
 set background=dark
 colorscheme gruvbox

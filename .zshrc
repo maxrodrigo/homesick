@@ -30,6 +30,8 @@ zadd zsh-users/zsh-completions
 # zsh-history-substring-search
 bindkey '\eOA' history-substring-search-up # or ^[OA
 bindkey '\eOB' history-substring-search-down # or ^[OB
+# zsh-autosuggestions
+bindkey '^[[Z' autosuggest-accept
 
 # Imports
 typeset -a dotfiles=(".aliases" ".exports")

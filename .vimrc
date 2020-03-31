@@ -61,8 +61,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_loc_list_height = 3
-let g:syntastic_python_flake8_args='--max-line-length=100'
+let g:syntastic_loc_list_height = 5
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
@@ -80,6 +79,20 @@ if executable("ag")
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
     let g:ctrlp_use_caching = 0
 endif
+
+" Lightline
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'right': [ [ 'lineinfo', 'syntastic' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'syntastic': 'SyntasticStatuslineFlag',
+      \ }
+      \ }
 
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
@@ -216,6 +229,11 @@ nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
 
 " Replace mappings
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>//g<left><left>
+
+" Toggle highlights
+map  <F12> :set hls!<CR>
+imap <F12> <ESC>:set hls!<CR>a
+vmap <F12> <ESC>:set hls!<CR>gv
 
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>

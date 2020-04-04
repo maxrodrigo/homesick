@@ -28,8 +28,8 @@ zadd zsh-users/zsh-autosuggestions
 zadd zsh-users/zsh-completions
 
 # zsh-history-substring-search
-bindkey '\eOA' history-substring-search-up # or ^[OA
-bindkey '\eOB' history-substring-search-down # or ^[OB
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 # zsh-autosuggestions
 bindkey '^[[Z' autosuggest-accept
 

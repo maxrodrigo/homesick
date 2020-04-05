@@ -22,8 +22,10 @@ shift + Print
     maim -s | xclip -selection clipboard -t image/png
 
 # MediaKeys
-XF86Audio{RaiseVolume,LowerVolume,Mute}
-    amixer -q -D pulse sset Master {3%+,3%-,toggle}
+XF86Audio{RaiseVolume,LowerVolume}
+    pactl set-sink-volume @DEFAULT_SINK@ {+5%, -5%}
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 XF86Audio{Play,Prev,Next}
     playerctl {play-pause,previous,next}

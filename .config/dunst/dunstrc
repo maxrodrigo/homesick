@@ -14,7 +14,7 @@
 
     ### Text ###
 
-    font = DejaVuSansMono Nerd Font Mono 8
+    font = DejaVuSansMono Nerd Font Mono 9
     markup = full
     format = "<b>%s</b>\n%b\n%a"
     show_indicators = no

@@ -15,9 +15,9 @@
     cl = clone
 
     ci = commit -a -v
-    cm = commit -m
+    c = commit -m
 
-    st = status -s
+    s = status -s
 
     co = checkout
     cb = checkout -b

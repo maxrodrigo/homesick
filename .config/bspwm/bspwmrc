@@ -1,11 +1,5 @@
 #! /bin/sh
 
-sxhkd &
-dunst &
-conky &
-
-setxkbmap -layout us -variant altgr-intl
-
 feh --bg-scale ~/Pictures/wallpapers/roses.jpg
 
 for m in $(bspc query -M); do bspc monitor $m -d I II III;done

@@ -45,6 +45,11 @@ call plug#end()
 
 " PLUGINS *********************************
 
+" Global
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python'
+
+
 " NERDTree
 autocmd FileType nerdtree setlocal nolist
 let g:NERDTreeAutoDeleteBuffer = 1

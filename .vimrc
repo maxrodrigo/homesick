@@ -7,15 +7,18 @@ endif
 
 call plug#begin()
 
-Plug 'jiangmiao/auto-pairs'
-Plug 'gabesoft/vim-ags'
-Plug 'kien/ctrlp.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'gabesoft/vim-ags'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/ctrlp.vim'
 
+" Deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-jedi'
+
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -27,6 +30,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
+
 " Colors
 Plug 'gruvbox-community/gruvbox'
 
@@ -49,6 +53,8 @@ call plug#end()
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python'
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " NERDTree
 autocmd FileType nerdtree setlocal nolist
@@ -205,6 +211,12 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 " MAPPINGS **********************************
+
+" Disable arrows
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Use ctrl-[hjkl] to select the active split!
 noremap <silent> <c-k> :wincmd k<CR>

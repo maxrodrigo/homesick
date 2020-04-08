@@ -8,7 +8,6 @@ endif
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'gabesoft/vim-ags'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
@@ -39,6 +38,7 @@ Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'vim-scripts/indentpython.vim'
 
 " Other Tools
+Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
@@ -106,27 +106,14 @@ let g:lightline = {
       \ }
 
 " VimWiki
-let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 let g:vimwiki_autowriteall = 1
+let g:vimwiki_list = [{'path': '~/Documents/wiki/'},
+                     \{'path': '~/Documents/infosec/', 'syntax': 'markdown', 'ext': 'md'}]
 
 " UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" Vim-Snippets
-let g:snips_author = "maxrodrigo"
-let g:snips_email = "contact@maxrodrigo.com"
-
-" YouCompleteMe
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_autoclose_preview_window_after_completion=1
-
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-
-let g:ycm_key_list_select_completion = ['<C-j>']
-let g:ycm_key_list_previous_completion = ['<C-k>']
 
 " INDENTATION *****************************
 set linebreak

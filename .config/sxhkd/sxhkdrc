@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-    rofi -show combi -combi-modi drun,run -font "DejaVuSansMono Nerd Font Mono 9" -theme "Pop-Dark"
+    dmenu_run -b -f -i
 
 # make sxhkd reload its configuration files:
 super + Escape

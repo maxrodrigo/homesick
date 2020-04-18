@@ -8,9 +8,11 @@ endif
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
-Plug 'gabesoft/vim-ags'
 Plug 'jiangmiao/auto-pairs'
-Plug 'kien/ctrlp.vim'
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -56,14 +58,19 @@ let g:python3_host_prog = '/usr/bin/python'
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
+" fzf
+nnoremap <C-p> :Files<Cr>
+
 " NERDTree
-autocmd FileType nerdtree setlocal nolist
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeHightlightCursorline = 1
 let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '\.egg-info', '.sass-cache', '.direnv']
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
+
+autocmd FileType nerdtree setlocal nolist
+map <C-n> :NERDTreeToggle<CR>
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -73,23 +80,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_loc_list_height = 5
-
-" CtrlP
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/]\.(git|hg|svn|vagrant|bower_components|dist|node_modules|vendor|log|cache)$',
-    \ 'file': '\tags$\|\.pyc$'
-    \ }
-
-if executable("ag")
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column\ --vimgrep
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
-endif
 
 " Lightline
 
@@ -108,7 +98,7 @@ let g:lightline = {
 " VimWiki
 let g:vimwiki_autowriteall = 1
 let g:vimwiki_list = [{'path': '~/Documents/wiki/'},
-                     \{'path': '~/Documents/infosec/', 'syntax': 'markdown', 'ext': 'md'}]
+                     \{'path': '~/Documents/infosec/'}]
 
 " UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -246,13 +236,6 @@ tnoremap <i> <G><A>
 " PLUGINS MAPPINGS ***************************
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
-" MAPPGINS FUNCTIONS ***************************
-
-" Pytest
-nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
-nmap <silent><Leader>f <Esc>:Pytest function verbose<CR>
 
 " AUTOCMD ***********************************
 

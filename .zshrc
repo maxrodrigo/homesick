@@ -27,6 +27,11 @@ zadd zsh-users/zsh-history-substring-search
 zadd zsh-users/zsh-autosuggestions
 zadd zsh-users/zsh-completions
 
+# Config
+bindkey -e # Since EDITOR=vim, emacs mode has to be set manually.
+autoload -U +X bashcompinit && bashcompinit
+#setopt menucomplete
+
 # zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

@@ -32,6 +32,10 @@ bindkey -e # Since EDITOR=vim, emacs mode has to be set manually.
 autoload -U +X bashcompinit && bashcompinit
 #setopt menucomplete
 
+# Bash autocompletion
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
 # zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

@@ -7,6 +7,9 @@ URxvt.loginShell:       true
 URxvt.scrollBar:        false
 URxvt.cursorUnderline:  true
 
+URxvt.transparent: true
+URxvt*shading: 20
+
 ! Fonts
 URxvt.font:         xft:DejaVuSansMono Nerd Font Mono:size=9
 URxvt.letterSpace:  -1

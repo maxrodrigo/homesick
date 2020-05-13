@@ -36,13 +36,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
 
 " Python
-Plug 'psf/black', { 'tag': '19.10b0' }
+Plug 'psf/black'
 Plug 'vim-scripts/indentpython.vim'
 
 " Other Tools
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'
@@ -60,6 +59,7 @@ let g:deoplete#enable_at_startup = 1
 
 " fzf
 nnoremap <C-p> :Files<Cr>
+nnoremap <C-k> :Ag! <C-R><C-W><CR>
 
 " NERDTree
 let g:NERDTreeAutoDeleteBuffer = 1
@@ -218,9 +218,6 @@ nnoremap <S-Tab> :bprevious<CR>
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 map <leader>qa :%bd<bar>e#<bar>bd#<CR><CR>
 
-" bind K to grep word under cursor
-nnoremap K :Ags "\b<C-R><C-W>\b"<CR>
-
 " Replace mappings
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>//g<left><left>
 
@@ -232,10 +229,6 @@ vmap <F12> <ESC>:set hls!<CR>gv
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>
 tnoremap <i> <G><A>
-
-" PLUGINS MAPPINGS ***************************
-
-" NERDTree
 
 " AUTOCMD ***********************************
 

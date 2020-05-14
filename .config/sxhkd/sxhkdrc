@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-    rofi -modi "run,window,calc" -show run -theme glue_pro_blue -font "DejaVuSansMono Nerd Font Mono 9"
+    rofi -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -24,11 +24,15 @@ shift + Print
 # MediaKeys
 XF86Audio{RaiseVolume,LowerVolume}
     pactl set-sink-volume @DEFAULT_SINK@ {+5%, -5%}
+
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 XF86Audio{Play,Prev,Next}
     playerctl {play-pause,previous,next}
+
+shift + XF86Audio{Prev,Next}
+    playerctl position {10-,10+}
 
 #
 # bspwm hotkeys

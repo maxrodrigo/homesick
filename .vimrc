@@ -19,7 +19,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 
 Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -54,6 +54,16 @@ call plug#end()
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python'
 
+" ALE
+let g:ale_open_list = 1
+let g:ale_list_window_size = 4
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'markdown': [],
+\   'python': ['black']
+\}
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -72,28 +82,20 @@ let g:NERDTreeShowHidden = 1
 autocmd FileType nerdtree setlocal nolist
 map <C-n> :NERDTreeToggle<CR>
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_loc_list_height = 5
-
 " Lightline
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'right': [ [ 'lineinfo', 'syntastic' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component_function': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \ }
-      \ }
+\   'colorscheme': 'wombat',
+\   'active': {
+\       'right': [ [ 'lineinfo', 'syntastic' ],
+\                  [ 'percent' ],
+\                  [ 'fileformat', 'fileencoding', 'filetype' ]
+\                ]
+\   },
+\   'component_function': {
+\       'syntastic': 'SyntasticStatuslineFlag',
+\   }
+\}
 
 " VimWiki
 let g:vimwiki_autowriteall = 1
@@ -208,9 +210,7 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap <leader>y :let @+=expand("%") . ':' . line(".")<CR>
 
 " Buffers navigation
-nnoremap gb :ls<CR>:buffer<Space>
-nnoremap gB :ls<CR>:vert belowright sb<Space>
-
+nnoremap <leader>b :Buffers<Space>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
@@ -225,6 +225,9 @@ nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>//g<left><left>
 map  <F12> :set hls!<CR>
 imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
+
+" Toggle spellcheck
+nnoremap <leader>s :setlocal spell! spelllang=en_us<CR>
 
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>

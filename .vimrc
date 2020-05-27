@@ -166,7 +166,7 @@ set splitbelow
 
 " SPELL CHECKING *************************
 set complete+=kspell
-setlocal spell
+setlocal spell spelllang=en_us
 
 " EXTRAS **********************************
 set lazyredraw

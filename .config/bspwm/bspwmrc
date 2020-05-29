@@ -21,8 +21,9 @@ bspc config pointer _modifier     mod4
 bspc config pointer _action1      move
 
 color=$(xrdb -query | awk '/\*.background/ { printf $2 }')
-color_alt=$(xrdb -query | awk '/\*.color9/ { printf $2 }')
+color_focused=$(xrdb -query | awk '/\*.color9/ { printf $2 }')
+color_active=$(xrdb -query | awk '/\*.color8/ { printf $2 }')
 
 bspc config normal_border_color   "${color}"
-bspc config focused_border_color  "${color}"
-bspc config active_border_color   "${color_alt}"
+bspc config focused_border_color  "${color_focused}"
+bspc config active_border_color   "${color_active}"

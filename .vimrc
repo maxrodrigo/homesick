@@ -98,6 +98,7 @@ let g:lightline = {
 \}
 
 " VimWiki
+let g:vimwiki_global_ext = 0
 let g:vimwiki_autowriteall = 1
 let g:vimwiki_list = [{'path': '~/Documents/wiki/'},
                      \{'path': '~/Documents/infosec/'}]
@@ -196,6 +197,10 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+noremap! <Up> <Nop>
+noremap! <Down> <Nop>
+noremap! <Left> <Nop>
+noremap! <Right> <Nop>
 
 " Use ctrl-[hjkl] to select the active split!
 noremap <silent> <c-k> :wincmd k<CR>

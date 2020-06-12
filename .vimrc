@@ -87,6 +87,8 @@ map <C-n> :NERDTreeToggle<CR>
 let g:lightline = {
 \   'colorscheme': 'wombat',
 \   'active': {
+\       'left':  [ [ 'mode', 'paste' ],
+\                  [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
 \       'right': [ [ 'lineinfo', 'syntastic' ],
 \                  [ 'percent' ],
 \                  [ 'fileformat', 'fileencoding', 'filetype' ]
@@ -94,6 +96,7 @@ let g:lightline = {
 \   },
 \   'component_function': {
 \       'syntastic': 'SyntasticStatuslineFlag',
+\       'gitbranch': 'FugitiveHead'
 \   }
 \}
 

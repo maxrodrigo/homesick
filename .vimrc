@@ -36,7 +36,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
 
 " Python
-Plug 'psf/black'
+Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'vim-scripts/indentpython.vim'
 
 " Other Tools
@@ -61,7 +61,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'markdown': [],
-\   'python': ['black']
+\   'python': ['black', 'autopep8']
 \}
 
 " Deoplete

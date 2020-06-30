@@ -16,7 +16,6 @@ Plug 'junegunn/fzf.vim'
 
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-jedi'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
@@ -38,10 +37,12 @@ Plug 'gruvbox-community/gruvbox'
 " Python
 Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'vim-scripts/indentpython.vim'
+Plug 'deoplete-plugins/deoplete-jedi'
 
 " Other Tools
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'

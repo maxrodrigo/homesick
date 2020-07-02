@@ -35,17 +35,16 @@ Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
 
 " Python
-Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'vim-scripts/indentpython.vim'
 Plug 'deoplete-plugins/deoplete-jedi'
 
 " Other Tools
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
@@ -158,6 +157,7 @@ set wildmode=list:longest,list:full
 set path+=**
 
 " SEARCHING ******************************
+set inccommand=nosplit " live substitution
 set hlsearch
 set incsearch
 set ignorecase
@@ -219,7 +219,7 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap <leader>y :let @+=expand("%") . ':' . line(".")<CR>
 
 " Buffers navigation
-nnoremap <leader>b :Buffers<Space>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
@@ -241,8 +241,3 @@ nnoremap <leader>s :setlocal spell! spelllang=en_us<CR>
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>
 tnoremap <i> <G><A>
-
-" AUTOCMD ***********************************
-
-autocmd BufWritePre *.py execute ':Black'
-autocmd FocusGained,BufEnter * :silent! !

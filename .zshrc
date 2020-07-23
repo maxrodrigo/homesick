@@ -1,7 +1,7 @@
 # μz
 source ~/.uz/uz.zsh
 
-zadd zimfw/gitster
+zadd maxrodrigo/gitster
 zadd zimfw/history
 zadd zsh-users/zsh-syntax-highlighting
 zadd zsh-users/zsh-history-substring-search

@@ -41,6 +41,11 @@ Plug 'deoplete-plugins/deoplete-jedi'
 " Other Tools
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
+Plug 'dhruvasagar/vim-table-mode'
+
+" Writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'
@@ -58,10 +63,10 @@ let g:python3_host_prog = '/usr/bin/python'
 let g:ale_open_list = 1
 let g:ale_list_window_size = 4
 let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'markdown': [],
-\   'python': ['black', 'autopep8']
+\   'python': ['black', 'autopep8'],
 \}
 
 " Deoplete
@@ -99,6 +104,16 @@ let g:lightline = {
 \       'gitbranch': 'FugitiveHead'
 \   }
 \}
+
+" Goyo
+let g:goyo_width = "80%"
+
+" Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+let g:limelight_conceal_ctermfg = 'DarkGray'
+let g:limelight_default_coefficient = 0.7
 
 " VimWiki
 let g:vimwiki_global_ext = 0
@@ -234,9 +249,6 @@ nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>//g<left><left>
 map  <F12> :set hls!<CR>
 imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
-
-" Toggle spellcheck
-nnoremap <leader>s :setlocal spell! spelllang=en_us<CR>
 
 " Exit TERMINAL MODE
 tnoremap <Esc> <C-\><C-n>

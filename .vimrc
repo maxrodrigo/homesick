@@ -67,6 +67,7 @@ let g:ale_completion_enabled = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'autopep8'],
+\   'cpp': ['clang-format'],
 \}
 
 " Deoplete
@@ -129,9 +130,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " INDENTATION *****************************
 set linebreak
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set expandtab
 set smarttab
@@ -210,16 +211,6 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 " MAPPINGS **********************************
-
-" Disable arrows
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-noremap! <Up> <Nop>
-noremap! <Down> <Nop>
-noremap! <Left> <Nop>
-noremap! <Right> <Nop>
 
 " Use ctrl-[hjkl] to select the active split!
 noremap <silent> <c-k> :wincmd k<CR>

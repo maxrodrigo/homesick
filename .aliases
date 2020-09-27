@@ -1,14 +1,14 @@
+# Dotfiles
+
+alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
 # Applications
 alias vim='nvim'
-alias wiki='nvim -c VimwikiIndex'
-alias irssi=' TERM=screen-256color irssi'
-alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias v='nvim'
+
+# Suffix
+alias -s pdf=firefox
 
 # Helpers
 alias ls='ls --color=auto'
 alias l='ls -la'
-alias ping='ping -c 5'
-
-# Nifty extras
-alias pycclean='find . -name "*.pyc" -exec rm {} \; && find . -name "__pycache__" -exec rm -rf {} \;'
-alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"

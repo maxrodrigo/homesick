@@ -8,15 +8,14 @@ endif
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
+Plug 'samoshkin/vim-mergetool'
 Plug 'jiangmiao/auto-pairs'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
@@ -42,10 +41,6 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'dhruvasagar/vim-table-mode'
-
-" Writing
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'
@@ -106,16 +101,6 @@ let g:lightline = {
 \   }
 \}
 
-" Goyo
-let g:goyo_width = "80%"
-
-" Limelight
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-let g:limelight_conceal_ctermfg = 'DarkGray'
-let g:limelight_default_coefficient = 0.7
-
 " VimWiki
 let g:vimwiki_global_ext = 0
 let g:vimwiki_autowriteall = 1
@@ -126,6 +111,10 @@ let g:vimwiki_list = [{'path': '~/Documents/wiki/'},
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Mergetool
+let g:mergetool_layout = 'mr,b'
+let g:mergetool_prefer_revision = 'local'
 
 " INDENTATION *****************************
 set linebreak

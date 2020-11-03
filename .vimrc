@@ -8,7 +8,6 @@ endif
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
-Plug 'samoshkin/vim-mergetool'
 Plug 'jiangmiao/auto-pairs'
 
 " fzf
@@ -111,10 +110,6 @@ let g:vimwiki_list = [{'path': '~/Documents/wiki/'},
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" Mergetool
-let g:mergetool_layout = 'mr,b'
-let g:mergetool_prefer_revision = 'local'
 
 " INDENTATION *****************************
 set linebreak

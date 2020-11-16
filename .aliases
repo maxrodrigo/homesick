@@ -7,7 +7,7 @@ alias vim='nvim'
 alias v='nvim'
 
 # Suffix
-alias -s pdf=firefox
+alias -s pdf=firefox-nightly
 
 # Helpers
 alias ls='ls --color=auto'

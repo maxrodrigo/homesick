@@ -15,7 +15,7 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 # Screenshots
-Print
+{Print, ctrl + alt + p}
     maim -s ~/Pictures/screenshots/ss_$(date +"%Y%m%d_%H%M%S").png
 
 shift + Print

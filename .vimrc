@@ -68,14 +68,14 @@ let g:ale_fixers = {
 let g:deoplete#enable_at_startup = 1
 
 " fzf
-nnoremap <C-p> :Files<Cr>
+nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-k> :Ag! <C-R><C-W><CR>
 
 " NERDTree
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeHightlightCursorline = 1
-let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '\.egg-info', '.sass-cache', '.direnv']
+let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '\.egg-info', '.sass-cache', '.direnv', 'venv', '.venv', 'node_modules', '.vagrant', '.git']
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 

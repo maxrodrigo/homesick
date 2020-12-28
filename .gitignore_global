@@ -8,6 +8,9 @@ venv/
 env/
 env
 
+# Apps
+.vagrant
+
 # Ctags
 tags
 tags.lock

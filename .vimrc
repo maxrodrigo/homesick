@@ -75,7 +75,7 @@ nnoremap <C-k> :Ag! <C-R><C-W><CR>
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeHightlightCursorline = 1
-let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '\.egg-info', '.sass-cache', '.direnv', 'venv', '.venv', 'node_modules', '.vagrant', '.git']
+let g:NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '.svn$', '\.egg-info', '.sass-cache', '.direnv', 'venv', '.venv', 'node_modules', '.vagrant']
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 
@@ -103,8 +103,7 @@ let g:lightline = {
 " VimWiki
 let g:vimwiki_global_ext = 0
 let g:vimwiki_autowriteall = 1
-let g:vimwiki_list = [{'path': '~/Documents/wiki/'},
-                     \{'path': '~/Documents/infosec/'}]
+let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 
 " UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"

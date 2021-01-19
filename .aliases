@@ -5,6 +5,7 @@ alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # Applications
 alias vim='nvim'
 alias v='nvim'
+alias k='kubectl'
 
 # Suffix
 alias -s pdf=firefox-nightly

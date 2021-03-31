@@ -1,5 +1,5 @@
 configuration {
-    modi: "run,window,calc";
+    modi: "run,window,calc,emoji";
     width: 40;
     lines: 10;
     font: "DejaVuSansMono Nerd Font Mono 9";
@@ -26,7 +26,7 @@ configuration {
 }
 
 window {
-    padding: 15;
+    padding: 20;
 }
 
 /* main input bar */

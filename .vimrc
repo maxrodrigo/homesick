@@ -68,7 +68,7 @@ let g:ale_fixers = {
 let g:deoplete#enable_at_startup = 1
 
 " fzf
-nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-p> :Files<Cr>
 nnoremap <C-k> :Ag! <C-R><C-W><CR>
 
 " NERDTree

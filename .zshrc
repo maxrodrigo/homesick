@@ -24,7 +24,9 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^[[Z' autosuggest-accept
 
 # Imports
-typeset -a dotfiles=(".aliases" ".exports")
+typeset -a dotfiles=(".aliases" ".exports" ".private")
 for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df
 done
+
+eval "$(direnv hook zsh)"

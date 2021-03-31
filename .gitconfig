@@ -1,6 +1,6 @@
 # This is Git's per-user configuration file.
 [user]
-    username = maxrodrigo
+	username = maxrodrigo
 	name = "Max Rodrigo"
 	email = contact@maxrodrigo.com
 [core]
@@ -14,6 +14,7 @@
     cp = cherry-pick
     cl = clone
 
+    ac = !git add -A && git commit -m
     ci = commit -a -v
     c = commit -m
 

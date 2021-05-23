@@ -1,0 +1,6 @@
+#! /bin/bash
+
+##this will run after autorandr switches display configuration
+
+~/.config/bspwm/bspwmrc
+notify-send -u normal -a "" "Display Profile Changed" "$AUTORANDR_CURRENT_PROFILE"

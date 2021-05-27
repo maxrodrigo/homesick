@@ -2,7 +2,7 @@ configuration {
     modi: "run,window,calc,emoji";
     width: 40;
     lines: 10;
-    font: "DejaVuSansMono Nerd Font Mono 9";
+    font: "DejaVuSansMono 9";
     sidebar-mode: true;
     threads: 5;
 }

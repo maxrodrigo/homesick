@@ -6,6 +6,7 @@ alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias vim='nvim'
 alias v='nvim'
 alias k='kubectl'
+alias kk='k9s --headless'
 
 # Suffix
 alias -s pdf=firefox-nightly

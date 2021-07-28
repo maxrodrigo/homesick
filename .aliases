@@ -1,15 +1,13 @@
 # Dotfiles
-
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Applications
 alias vim='nvim'
 alias v='nvim'
+
+# Kubernetes
 alias k='kubectl'
 alias kk='k9s --headless'
-
-# Suffix
-alias -s pdf=firefox-nightly
 
 # Helpers
 alias ls='ls --color=auto'

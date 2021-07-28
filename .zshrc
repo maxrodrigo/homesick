@@ -7,6 +7,7 @@ zadd zsh-users/zsh-syntax-highlighting
 zadd zsh-users/zsh-history-substring-search
 zadd zsh-users/zsh-autosuggestions
 zadd zsh-users/zsh-completions
+zadd maxrodrigo/zsh-kubernetes-contexts
 
 # Config
 bindkey -e # Since EDITOR=vim, emacs mode has to be set manually.

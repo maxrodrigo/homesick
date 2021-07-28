@@ -1,6 +1,6 @@
 #! /bin/sh
 
-feh --bg-scale ~/Pictures/wallpapers/bar.jpg
+feh --bg-scale ~/Pictures/wallpapers/cybercity.jpg
 
 for m in $(bspc query -M); do bspc monitor $m -d α β γ;done
 
@@ -29,4 +29,3 @@ bspc config focused_border_color  "${color_focused}"
 bspc config active_border_color   "${color_active}"
 
 bspc rule -a Chromium desktop='^2'
-bspc rule -a Nightly desktop='^1'

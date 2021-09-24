@@ -6,5 +6,7 @@ setxkbmap -layout us -variant altgr-intl
 
 sxhkd &
 dunst &
+firefox-developer-edition &
+slack &
 
 exec bspwm

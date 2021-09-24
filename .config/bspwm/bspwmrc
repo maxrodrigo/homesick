@@ -1,6 +1,6 @@
 #! /bin/sh
 
-feh --bg-scale ~/Pictures/wallpapers/cybercity.jpg
+feh --bg-scale ~/Pictures/wallpapers/ramen.jpg
 
 for m in $(bspc query -M); do bspc monitor $m -d α β γ;done
 

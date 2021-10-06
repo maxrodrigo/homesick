@@ -1,132 +1,19 @@
 configuration {
-    modi: "run,window,calc,emoji";
-    width: 40;
-    lines: 10;
-    font: "DejaVuSansMono 9";
-    sidebar-mode: true;
-    threads: 5;
-}
-
-* {
-    /* main colors */
-    bg: rgba( 17, 17, 17, 100 %);
-    fg: rgba( 156, 161, 184, 100 %);
-
-    /* secondary colors */
-    abg: rgba( 229, 169, 187, 100 %);
-    afg: rgba( 17, 17, 17, 100 %);
-
-    blue: rgba( 99, 156, 232, 100 %);
-    red: rgba( 231, 94, 137, 100 %);
-
-    border-color: var(fg);
-    background-color: var(bg);
-    text-color: var(fg);
-    spacing: 2;
-}
-
-window {
-    padding: 20;
-}
-
-/* main input bar */
-
-inputbar {
-    padding: 0 0 10;
-    spacing: 0;
-    children: [ prompt, textbox-prompt-colon, entry, overlay, case-indicator];
-}
-
-case-indicator {
-    spacing: 0;
-}
-
-entry {
-    spacing: 0;
-}
-
-prompt {
-    spacing: 0;
-}
-
-textbox-prompt-colon {
-    margin: 0px 0.3000em 0.0000em 0.0000em;
-    expand: false;
-    str: ":";
-    text-color: inherit;
-}
-
-/* message below input */
-
-message {
-    padding: 0 0 15;
-}
-
-textbox {}
-
-/* main list */
-
-listview {
-    padding: 10 0;
-    border: 1px solid 0px 0px;
-}
-
-/* list elements */
-
-element {
-    padding: 2px 0;
-}
-
-/* normal elements */
-
-element normal.normal {}
-
-element normal.urgent {
-    text-color: var(red);
-}
-
-element normal.active {
-    text-color: var(blue);
-}
-
-/* selected elements */
-
-element selected {
-    background-color: var(abg);
-}
-
-element selected.normal {
-    text-color: var(afg);
-}
-
-element selected.urgent {
-    text-color: var(red);
-}
-
-element selected.active {
-    text-color: var(bg);
-}
-
-element alternate.normal {}
-
-element alternate.urgent {}
-
-element alternate.active {}
-
-/* mode switcher */
-
-mode-switcher {
-    border: 1px solid 0px 0px;
-    padding: 10 0 0;
-}
-
-button {}
-
-button selected {
-    background-color: var(abg);
-    text-color: var(afg);
-}
-
-error-message {
-    text-color: var(red);
+  modi: "run,window,calc,ssh";
+  theme: "theme";
+  font: "DejaVuSansMono 9";
+  run-shell-command: "{terminal} --hold -e {cmd}";
+  fixed-num-lines: true;
+  sidebar-mode: true;
+  threads: 5;
+  window-format: "{c}   {t}";
+  cache-dir: "~/.cache/rofi/";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
 }

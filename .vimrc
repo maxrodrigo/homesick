@@ -40,6 +40,7 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'andrewstuart/vim-kubernetes'
 
 " Fancy stuff
 Plug 'vimwiki/vimwiki'

@@ -28,6 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
 
 " Colors
 Plug 'gruvbox-community/gruvbox'
@@ -110,6 +111,9 @@ let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" indentLine
+let g:indentLine_fileType = ['yaml']
 
 " INDENTATION *****************************
 set linebreak

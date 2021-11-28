@@ -1,6 +1,5 @@
 configuration {
   modi: "run,window,calc,ssh";
-  theme: "theme";
   font: "DejaVuSansMono 9";
   run-shell-command: "{terminal} --hold -e {cmd}";
   fixed-num-lines: true;
@@ -17,3 +16,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+
+@theme "theme"

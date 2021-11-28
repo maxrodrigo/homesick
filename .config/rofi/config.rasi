@@ -6,7 +6,6 @@ configuration {
   sidebar-mode: true;
   threads: 5;
   window-format: "{c}   {t}";
-  cache-dir: "~/.cache/rofi/";
   timeout {
       action: "kb-cancel";
       delay:  0;

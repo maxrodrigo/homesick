@@ -34,7 +34,3 @@ typeset -a dotfiles=(".aliases" ".exports" ".private")
 for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df
 done
-
-if (( $+commands[direnv] ));then
-    eval "$(direnv hook zsh)"
-fi

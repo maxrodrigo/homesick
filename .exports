@@ -1,10 +1,8 @@
+# vim: set ft=zsh:
+
 # Default editor
 export EDITOR=nvim
 
 # Colors
 export KEYTIMEOUT=1
 export QUOTING_STYLE=literal
-
-# Ruby
-export GEM_HOME=${HOME}/.gems
-export PATH=${HOME}/.gem/ruby/2.7.0/bin/:$PATH

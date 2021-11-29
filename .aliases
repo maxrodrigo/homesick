@@ -1,9 +1,10 @@
+# vim: set ft=zsh:
+
 # Dotfiles
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Applications
-alias vim='nvim'
-alias v='nvim'
+alias vim='nvim' v='vim'
 
 # Kubernetes
 alias k='kubectl'

@@ -12,12 +12,10 @@ zadd jreese/zsh-titles titles.plugin.zsh
 
 # Config
 bindkey -e # Since EDITOR=vim, emacs mode has to be set manually.
-autoload -U +X bashcompinit && bashcompinit
-#setopt menucomplete
 
-# Bash autocompletion
-autoload -U +X compinit && compinit
+# autocompletion
 autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 
 # zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up

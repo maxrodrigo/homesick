@@ -4,6 +4,10 @@
 
 # terminal emulator
 super + Return
+    kitty
+
+# secondary terminal emulator
+super + shift + Return
     urxvt
 
 # program launcher

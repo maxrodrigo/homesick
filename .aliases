@@ -3,13 +3,15 @@
 # Dotfiles
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
-# Applications
-alias vim='nvim' v='vim'
+# Core
+alias ls='ls --hyperlink=auto --color=auto --sort=time'
+alias l='ls -lA'
+alias cat='bat'
 
-# Kubernetes
+# Applications
+alias icat='kitty +kitten icat'
+alias ssh='kitty +kitten ssh'
+
+alias vim='nvim' v='vim'
 alias k='kubectl'
 alias kk='k9s --headless'
-
-# Helpers
-alias ls='ls --color=auto'
-alias l='ls -la'

@@ -1,6 +1,6 @@
 configuration {
   modi: "run,window,calc,ssh";
-  font: "DejaVuSansMono 9";
+  font: "DejaVuSansMono Nerd Font Mono 9";
   run-shell-command: "{terminal} --hold -e {cmd}";
   fixed-num-lines: true;
   sidebar-mode: true;

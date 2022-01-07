@@ -27,6 +27,9 @@ bindkey '^[[Z' autosuggest-accept
 # zsh-tab-title
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 
+# lscolors
+. /usr/share/LS_COLORS/dircolors.sh
+
 # Imports
 typeset -a dotfiles=(".aliases" ".exports" ".private")
 for df in "${dotfiles[@]}"; do

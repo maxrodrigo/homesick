@@ -4,9 +4,9 @@
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Core
-alias ls='ls --hyperlink=auto --color=auto --sort=time'
+alias ls='ls --hyperlink=auto --color=auto --sort=time --group-directories-first'
 alias l='ls -lA'
-alias cat='bat'
+alias cat='bat --style=numbers,changes'
 
 # Applications
 alias icat='kitty +kitten icat'

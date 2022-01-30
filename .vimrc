@@ -31,7 +31,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 
 " Colors
-Plug 'gruvbox-community/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 
 " Python
 Plug 'vim-scripts/indentpython.vim'
@@ -64,6 +64,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'autopep8'],
 \   'cpp': ['clang-format'],
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
 \}
 
 " Deoplete
@@ -147,8 +149,9 @@ set number
 set guioptions=aAce
 set noshowmode " lightline shows the mode
 
-set background=dark
-colorscheme gruvbox
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
 set showmatch " highlight matching [{()}]
 set showcmd

@@ -1,5 +1,5 @@
 configuration {
-  modi: "run,window,calc,ssh";
+  modi: "run,window,calc,emoji";
   font: "DejaVuSansMono Nerd Font Mono 9";
   run-shell-command: "{terminal} --hold -e {cmd}";
   fixed-num-lines: true;

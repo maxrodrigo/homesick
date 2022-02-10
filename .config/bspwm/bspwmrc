@@ -27,5 +27,3 @@ color_active=#32302f
 bspc config normal_border_color   "${color}"
 bspc config focused_border_color  "${color_focused}"
 bspc config active_border_color   "${color_active}"
-
-bspc rule -a Chromium desktop='^2'

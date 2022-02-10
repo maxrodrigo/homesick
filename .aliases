@@ -3,7 +3,7 @@
 # Dotfiles
 alias conf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
-# Core
+# Utilities
 alias ls='ls --hyperlink=auto --color=auto --sort=time --group-directories-first'
 alias l='ls -lA'
 alias cat='bat --style=numbers,changes'
@@ -12,6 +12,6 @@ alias cat='bat --style=numbers,changes'
 alias icat='kitty +kitten icat'
 alias ssh='kitty +kitten ssh'
 
-alias vim='nvim' v='vim'
+alias v='nvim'
 alias k='kubectl'
 alias kk='k9s --headless'

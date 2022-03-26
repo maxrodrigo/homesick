@@ -1,5 +1,5 @@
 if empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs 
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
@@ -7,10 +7,11 @@ endif
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'honza/vim-snippets'
 
-Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
@@ -23,22 +24,22 @@ Plug 'tpope/vim-sensible'
 
 " Extras
 Plug 'editorconfig/editorconfig-vim'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
 " Plugin: COC
 
 let g:coc_global_extensions = [
-      \ 'coc-css', 'coc-html', 'coc-prettier',
-      \ 'coc-pyright', 
+      \ 'coc-css', 'coc-html',
+      \ 'coc-prettier', 'coc-pairs', 'coc-snippets',
+      \ 'coc-pyright',
       \ 'coc-json', 'coc-yaml',
       \ 'coc-git', 'coc-markdownlint'
       \ ]
 
 function! s:check_back_space() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 function! s:show_documentation()
@@ -51,10 +52,12 @@ function! s:show_documentation()
   endif
 endfunction
 
-inoremap <silent><expr> <Tab>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<Tab>" :
-  \ coc#refresh()
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -97,7 +100,6 @@ nnoremap <leader>b :Buffers<Cr>
 
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
-let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -128,13 +130,26 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" Swap / Backups / Undo
+
+set swapfile
+set directory=~/.cache/nvim/swap//
+
+set backupcopy=yes
+set backupdir=~/.cache/nvim/backup//
+
+set undofile
+set undodir=~/.cache/nvim/cache//
+
 " Interface
 
-set signcolumn=number
 set number
 set termguicolors
-colorscheme onedark
 let &colorcolumn="80,".join(range(100,999),",")
+let ayucolor="mirage"
+colorscheme ayu
+
+hi CocHighlightText guibg=DarkSlateGray
 
 " Extras
 
@@ -147,6 +162,11 @@ set listchars+=precedes:«
 set listchars+=nbsp:░
 
 set updatetime=300
+
+set ignorecase
+set smartcase
+
+set wrap linebreak nolist
 
 " Mappings
 

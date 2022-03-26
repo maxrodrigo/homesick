@@ -1,0 +1,32 @@
+a () {
+  local python=${1:-python3}
+  [[ $# -gt 0 ]] && shift
+
+  unset PYTHONHOME
+  local virtualenvs_path="${HOME}/.virtualenvs"
+  local cwd=`basename $PWD`
+  local virtualenv="${virtualenvs_path}/${cwd}"
+
+  [[ ! -d $virtualenvs_path ]] && mkdir -p $venv_path
+
+  if [[ ! -d $virtualenv ]]; then
+    echo -n "No Virtual Environment found. Create in \"$virtualenv\" (y/n)? "
+    read confirmation
+    if [[ "$confirmation" != "${confirmation#[Yy]}" ]]; then
+      "$python" -m venv "$virtualenv"
+    fi
+  fi
+
+  if [[ ! -n $VIRTUAL_ENV ]]; then
+    echo "Activating ..."
+    source $virtualenv/bin/activate
+
+    if [[ -f ./.envrc ]]; then
+      echo "Loading 'envr.rc'...\n"
+
+      tenv=$(env | sort)
+      source .envrc
+      comm -13 <(echo $tenv) <(env | sort) | bat -l zsh --style plain
+    fi
+  fi
+}

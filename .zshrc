@@ -31,7 +31,7 @@ ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 . /usr/share/LS_COLORS/dircolors.sh
 
 # Imports
-typeset -a dotfiles=(".aliases" ".exports" ".private")
+typeset -a dotfiles=(".aliases" ".exports" ".functions" ".private")
 for df in "${dotfiles[@]}"; do
     [ -f ${HOME}/$df ] && source ${HOME}/$df
 done

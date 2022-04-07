@@ -6,6 +6,7 @@ a () {
   local virtualenvs_path="${HOME}/.virtualenvs"
   local cwd=`basename $PWD`
   local virtualenv="${virtualenvs_path}/${cwd}"
+  local activate_path="${virtualenv}/bin/activate"
 
   [[ ! -d $virtualenvs_path ]] && mkdir -p $venv_path
 
@@ -17,9 +18,14 @@ a () {
     fi
   fi
 
-  if [[ ! -n $VIRTUAL_ENV ]]; then
-    echo "Activating ..."
-    source $virtualenv/bin/activate
+  if [[ -n $VIRTUAL_ENV ]]; then
+    echo "Deactivating Environment ..."
+    deactivate
+  fi
+
+  if [[ -f ${activate_path} ]];then
+    echo "Loading Environment ..."
+    source ${activate_path}
 
     if [[ -f ./.envrc ]]; then
       echo "Loading 'envr.rc'...\n"
